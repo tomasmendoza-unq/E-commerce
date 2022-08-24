@@ -1,0 +1,471 @@
+/*
+Reparos a hacer:
+
+
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  overflow-x: hidden;
+  background-color: rgb(255, 214, 223);
+}
+
+.titulo {
+  margin-left: 20px;
+  padding-right: 70px;
+}
+
+.navbar {
+  text-decoration: none;
+}
+
+.navbar-nav {
+  margin-right: 80px;
+}
+
+.collapse .form-control:first-of-type {
+  border-radius: 20px;
+  width: 500px;
+}
+
+.linea {
+  height: 25px;
+  width: 100%;
+  background-color: #f8c0d4;
+  font-size: 5px;
+  color: white;
+  padding-top: 2px;
+  font-size: 15px;
+}
+
+.linea a {
+  margin-right: 75px;
+  font-weight: bold;
+}
+
+/* Estilos del carrusel */
+
+.carousel {
+  margin: 20px auto;
+  width: 950px; /* Arreglar responsive */
+}
+
+.carousel-item img {
+  object-fit: cover;
+  height: 35.25rem;
+}
+
+button:hover {
+  background-color: #ffa9c9d8;
+  transition: background-color 0.4s;
+}
+
+
+/* Estilo de los productos destacados */
+
+.tarjeta {
+  background-color: rgb(255, 227, 232);
+  text-align: center;
+  padding-bottom: 120px;
+}
+
+.tarjeta h2 {
+  color: #ff98a9;
+  margin: 100px 0px 75px;
+  padding-top: 100px;
+}
+.card {
+  border: none;
+  background-color: rgb(255, 227, 232);
+  margin-bottom: 25px;
+}
+
+.card-img-top {
+  height: 12rem;
+  border-radius: 20px;
+  object-fit: cover;
+  box-shadow: 1px 1px 10px 10px rgba(218, 49, 165, 0.153);
+}
+
+.sanrio {
+  position: absolute;
+  width: 80px;
+  left: 240px;
+  top: 150px;
+}
+
+/* seccion de compra */
+
+.compra{
+  margin: 50px 0px 75px -50px;
+}
+
+.compra h1{
+  width: 350px;
+  margin: -10px 90px 0px;
+  color: #ff98a9;
+}
+
+.form-check-input{
+  padding: 6px 10px;
+  background: #EBA2A2;
+  border-radius: 6px;
+  margin-right: 10px;
+}
+
+.form-check{
+  margin-top: 30px;
+  color: rgb(183, 44, 104);
+}
+
+/* carrusel trucho porque no econtre la forma */
+
+.slider {
+  margin-top: 50px ;
+}
+
+.boton{
+  width: 200px;
+  margin: 80px 0px 0px 20px;
+  border-radius: 14px;
+}
+
+.boton button{
+  background: #ff98a9;
+  border-radius: 6px;
+  width: 171px;
+  height: 30px;
+  border-radius: 14px;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  padding: 5px 10px 10px 10px;
+}
+
+
+
+/* cards de productos relacionados*/  
+.producto img {
+  box-shadow: 1px 1px 10px 10px rgba(218, 49, 165, 0.153);
+}
+
+.producto h4{
+  color: #ff98a9;
+  margin: 150px 0px 40px 5px;
+}
+
+
+
+/* Mi carrito */
+
+.container .carrito{
+  max-width: 100%;
+  margin: 60px 0px 140px 15px;
+}
+
+.container .carrito h1{
+  color: #DE9898;
+  border-bottom: solid #B9B4B4 2px;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 48px;
+}
+
+/*las fotos y los productos*/
+
+.container .carrito .col-lg-12 img{
+  height: 160px;
+  width: 200px;
+  border-radius: 6px;
+  margin: 20px;
+  box-shadow: 0px 1px 10px 6px rgba(218, 49, 165, 0.153);
+}
+
+/*Descripcion*/
+.container .descripcion{
+  margin: 40px 10px;
+  width: 450px;
+}
+
+.container .descripcion p{
+  margin-left: 2px;
+  font-size: 18px;
+  line-height: 24px;
+  color: #D68080;
+}
+
+.container .descripcion h4{
+  margin-bottom: 20px;
+  font-size: 30px;
+  font-weight: 900;
+  line-height: 24px;
+  text-align: left;
+  color: #D68080;
+}
+
+/*Cantidad*/
+
+.container .cantidad {
+  width: 100px;
+  margin: 40px 0px 0px 40px;
+}
+
+
+.container .cantidad p{
+  margin-left: 6px;
+  font-size: 18px;
+  line-height: 24px;
+  color: #D68080;
+  font-weight: 500;
+}
+
+.container .cantidad .aumentar {
+  width: 85px;
+  background: #DE9898;
+  border-radius: 6px;
+}
+
+.container .cantidad .aumentar button {
+  background: #DE9898;
+  border-radius: 6px;
+}
+
+.container .cantidad .aumentar input{
+  width: 10px;
+  background: #DE9898;
+  border-radius: 6px;
+  border: none;
+  color: white;
+  padding: 2px;
+}
+
+/*precio*/
+
+.container .precio p{
+  margin: 80px 0px 0px 50px;
+  font-size: 30px;
+  font-weight: 900;
+  line-height: 24px;
+  text-align: left;
+  color: #D68080;
+}
+
+/* x */
+
+.container .cancelar{
+  margin: 75px 0px 0px 50px;
+}
+
+
+
+/*precios y los botones*/
+
+.pedido{
+  width: 580px;
+  margin: 100px 250px;
+  padding: 50px;
+  border-top: solid #B9B4B4 2px;
+}
+
+.pedido h4{
+  font-size: 30px;
+  font-weight: 900;
+  line-height: 24px;
+  color: #D68080;
+  display: inline;
+  margin-right: 50px;
+}
+
+.pedido p{
+  font-size: 30px;
+  line-height: 24px;
+  color: #D68080;
+  display: inline;
+}
+
+
+.pedido .btn{
+  width: 200px;
+  background-color: #DE9898;
+  font-size: 20px;
+  line-height: 24px;
+  display: inline;
+  padding: 10px;
+  margin: 50px 10px;
+}
+
+/*imagen del carrito*/
+
+.container .carrito-imagen img{
+  position: absolute;
+  width: 220px;
+  height: 201px;
+  top: 0;
+  margin-top: 922px;
+  margin-left: 791px;
+}
+
+/* Botones del carrusel */
+.carousel .carousel-control {
+	  height: 100px;
+    width: 40px;
+    margin: auto 0;
+}
+.carousel .carousel-control i {
+    font-size: 30px;
+    position: absolute;
+    top: 50%;
+    display: inline-block;
+    margin: -16px 0 0 0;
+    left: 0;
+    right: 0;
+    color: rgba(255, 0, 238, 0.8);
+    text-shadow: none;
+    font-weight: bold;
+}
+
+
+/* Reglas para el login */
+
+section .container:not(form .container) {
+  width: 363px;
+  height: 470px;
+  left: 299px;
+  top: 150px;
+  background: rgb(255, 199, 199);
+  border-radius: 22px;
+}
+
+.text-capitalize {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.form-control {
+  background-color: #ffe4e8;
+}
+
+.btn {
+  background-color: #ff98a9;
+  border: #ff98a9;
+}
+
+.btn:hover {
+  background-color: #ff798f;
+}
+
+section .container form img {
+  position: absolute;
+  width: 198px;
+  top: 0;
+  margin-top: 428px;
+  margin-left: 400px;
+}
+
+/* Reglas register */
+
+section .register:not(form .register) {
+  width: 513px;
+}
+
+section .register form img {
+  margin-left: 500px;
+}
+
+/* Media queries generales */
+
+/* Esta media es para el menú hamburguesa */
+
+@media (min-width: 992px) and (max-width: 1149px) {
+  .collapse .form-control:first-of-type {
+    width: 300px;
+  }
+
+  .navbar-nav {
+    font-size: 12px;
+  }
+
+  .carousel {
+    width: 650px;
+  }
+
+  .card {
+    margin-left: 0px;
+  }
+}
+
+/* Esta media es para el menú hamburguesa */
+
+@media (max-width: 991px) {
+  .collapse .form-control:first-of-type {
+    margin: 20px 10px 20px;
+    border-radius: 50px;
+    width: 250px;
+  }
+
+  .nav-item {
+    margin-left: 20px;
+  }
+
+  .nav-item:nth-of-type(1) {
+    margin-left: 22px;
+  }
+
+  .nav-item:nth-of-type(2) {
+    margin-left: 12px;
+  }
+
+  .carousel {
+    width: 650px;
+  }
+
+  section .register:not(form .register) {
+    height: 570px;
+  }
+}
+
+/* Media queries para el login */
+
+@media (max-width: 425px) {
+  section .register:not(form .register) {
+    width: 350px;
+    padding: 0;
+    font-size: 14px;
+  }
+
+  .carousel {
+    width: 350px;
+  }
+
+  .carousel-item img {
+    height: 20rem;
+  }
+
+  .tarjeta {
+    margin-left: 30px;
+  }
+}
+
+@media (max-width: 320px) {
+  section .container:not(form .container) {
+    width: 280px;
+    padding: 0;
+    font-size: 14px;
+  }
+
+  .carousel {
+    width: 300px;
+  }
+
+  .carousel-item img {
+    height: 14rem;
+  }
+
+  /* Hacer los productos destacados mas pequeños */
+}
+
+
