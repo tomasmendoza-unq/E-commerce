@@ -469,3 +469,12 @@ section .register form img {
 }
 
 
+/* Estilos del dropdown(desplegables)*/
+
+.dropdown-menu{
+  background-color: #D68080;
+}
+
+.dropdown-menu:hover{
+  background-color: #D68080;
+}
