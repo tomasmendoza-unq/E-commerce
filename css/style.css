@@ -366,6 +366,14 @@ section .container form img {
   margin-left: 400px;
 }
 
+form .link-dark{
+  text-decoration: none;
+}
+
+form .link-dark:hover{
+  text-decoration: underline black;
+}
+
 /* Reglas register */
 
 section .register:not(form .register) {
@@ -477,4 +485,12 @@ section .register form img {
 
 .dropdown-menu:hover{
   background-color: #D68080;
+}
+
+/*cuando pasas el puntero se despliega*/
+@media screen {
+  .dropdown:hover .dropdown-menu,
+  .btn-group:hover .dropdown-menu {
+      display: block;
+  }
 }

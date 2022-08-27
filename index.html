@@ -66,7 +66,7 @@
             <input
               class="form-control me-2"
               type="search"
-              placeholder="Buscar"
+              placeholder="Buscar producto"
               aria-label="Search"
             />
           </form>
@@ -85,7 +85,7 @@
               <a class="nav-link link-light" href="#">Ayuda</a>
             </li>
             <li class="nav-item">
-              <a href="login.html"
+              <a href="views/login.html"
                 ><span
                   class="iconify"
                   data-icon="carbon:user-avatar"
@@ -116,15 +116,37 @@
     -->
     <div class="linea">
       <div class="container d-none d-md-flex justify-content-center">
-        <a>Inicio</a>
-        <a href="views/productos.html" class="link-light">Productos</a>
-          <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Combos</a>
+        <a class="link-light" href="index.html">Inicio</a>
+        <div class="dropdown">
+          <a 
+          class="nav-link dropdown-toggle" 
+          data-bs-toggle="dropdown" 
+          href="#" 
+          role="button" 
+          aria-expanded="false">Productos</a>
+          </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#scrollspyHeading3">idk</a></li>
-            <li><a class="dropdown-item" href="#scrollspyHeading4">idk</a></li>
+            <li><a class="dropdown-item" href="views/productos.html">Rellenar</a></li>
+            <li><a class="dropdown-item" href="views/productos.html">Rellenar</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#scrollspyHeading5">idk</a></li>
+            <li><a class="dropdown-item" href="views/productos.html">Rellenar</a></li>
           </ul>
+        </div>
+        <div class="dropdown">
+          <a 
+          class="nav-link dropdown-toggle" 
+          data-bs-toggle="dropdown" 
+          href="#" 
+          role="button" 
+          aria-expanded="false">Combos</a>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="views/productos.html">Rellenar</a></li>
+            <li><a class="dropdown-item" href="views/productos.html">Rellenar</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="views/productos.html">Rellenar</a></li>
+          </ul>
+        </div>
         <a>Contacto</a>
       </div>
     </div>
