@@ -1,10 +1,13 @@
+<!--
+  hay que arreglar el hover de los botones +
+-->
 <!DOCTYPE html>
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="img/assets/icon.ico" type="image/x-icon" />
+    <link rel="icon" href="../public/img/assets/icon.ico" type="image/x-icon" />
     <title>Productos - prototipo</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
@@ -65,7 +68,7 @@
             <input
               class="form-control me-2"
               type="search"
-              placeholder="Buscar"
+              placeholder="Buscar producto"
               aria-label="Search"
             />
           </form>
@@ -95,7 +98,7 @@
               <a class="nav-link link-light" href="login.html">Mi cuenta</a>
             </li>
             <li class="nav-item">
-              <a href="#"
+              <a href="carrito.html"
                 ><span
                   class="iconify"
                   data-icon="bytesize:cart"
@@ -115,12 +118,41 @@
     -->
     <div class="linea">
       <div class="container d-none d-md-flex justify-content-center">
-        <a>Inicio</a>
-        <a>Productos</a>
-        <a>Combos</a>
+        <a class="link-light" href="../index.html">Inicio</a>
+        <div class="dropdown">
+          <a 
+          class="nav-link dropdown-toggle" 
+          data-bs-toggle="dropdown" 
+          href="#" 
+          role="button" 
+          aria-expanded="false">Productos</a>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="productos.html">Rellenar</a></li>
+            <li><a class="dropdown-item" href="productos.html">Rellenar</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="productos.html">Rellenar</a></li>
+          </ul>
+        </div>
+        <div class="dropdown">
+          <a 
+          class="nav-link dropdown-toggle" 
+          data-bs-toggle="dropdown" 
+          href="#" 
+          role="button" 
+          aria-expanded="false">Combos</a>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="productos.html">Rellenar</a></li>
+            <li><a class="dropdown-item" href="productos.html">Rellenar</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="productos.html">Rellenar</a></li>
+          </ul>
+        </div>
         <a>Contacto</a>
       </div>
     </div>
+
 
     <div class="my-5 text-center" style="color: #ff98a9">
       <h1>Productos</h1>
@@ -235,8 +267,8 @@
                       Banjeda de combinaciones
                     </h5>
                     <p class="text-dark text-center">$1299.99</p>
-                    <a href="#" class="btn btn-primary me-5">Detalles</a>
-                    <button class="btn btn-primary rounded-circle ms-5">
+                    <a href="#" class="btn btn-success me-5">Detalles</a>
+                    <button class="btn btn-success rounded-circle ms-5">
                       +
                     </button>
                   </div>
@@ -261,8 +293,8 @@
                       Banjeda de combinaciones
                     </h5>
                     <p class="text-dark text-center">$1299.99</p>
-                    <a href="#" class="btn btn-primary me-5">Detalles</a>
-                    <button class="btn btn-primary rounded-circle ms-5">
+                    <a href="#" class="btn btn-success me-5">Detalles</a>
+                    <button class="btn btn-success rounded-circle ms-5">
                       +
                     </button>
                   </div>
@@ -287,8 +319,8 @@
                       Banjeda de combinaciones
                     </h5>
                     <p class="text-dark text-center">$1299.99</p>
-                    <a href="#" class="btn btn-primary me-5">Detalles</a>
-                    <button class="btn btn-primary rounded-circle ms-5">
+                    <a href="#" class="btn btn-success me-5">Detalles</a>
+                    <button class="btn btn-success rounded-circle ms-5">
                       +
                     </button>
                   </div>
@@ -313,8 +345,8 @@
                       Banjeda de combinaciones
                     </h5>
                     <p class="text-dark text-center">$1299.99</p>
-                    <a href="#" class="btn btn-primary me-5">Detalles</a>
-                    <button class="btn btn-primary rounded-circle ms-5">
+                    <a href="#" class="btn btn-success me-5">Detalles</a>
+                    <button class="btn btn-success rounded-circle ms-5">
                       +
                     </button>
                   </div>
@@ -339,8 +371,8 @@
                       Banjeda de combinaciones
                     </h5>
                     <p class="text-dark text-center">$1299.99</p>
-                    <a href="#" class="btn btn-primary me-5">Detalles</a>
-                    <button class="btn btn-primary rounded-circle ms-5">
+                    <a href="#" class="btn btn-success me-5">Detalles</a>
+                    <button class="btn btn-success rounded-circle ms-5">
                       +
                     </button>
                   </div>
@@ -365,8 +397,8 @@
                       Banjeda de combinaciones
                     </h5>
                     <p class="text-dark text-center">$1299.99</p>
-                    <a href="#" class="btn btn-primary me-5">Detalles</a>
-                    <button class="btn btn-primary rounded-circle ms-5">
+                    <a href="#" class="btn btn-success me-5">Detalles</a>
+                    <button class="btn btn-success rounded-circle ms-5">
                       +
                     </button>
                   </div>
@@ -391,8 +423,8 @@
                       Banjeda de combinaciones
                     </h5>
                     <p class="text-dark text-center">$1299.99</p>
-                    <a href="#" class="btn btn-primary me-5">Detalles</a>
-                    <button class="btn btn-primary rounded-circle ms-5">
+                    <a href="#" class="btn btn-success me-5">Detalles</a>
+                    <button class="btn btn-success rounded-circle ms-5">
                       +
                     </button>
                   </div>
@@ -417,8 +449,8 @@
                       Banjeda de combinaciones
                     </h5>
                     <p class="text-dark text-center">$1299.99</p>
-                    <a href="#" class="btn btn-primary me-5">Detalles</a>
-                    <button class="btn btn-primary rounded-circle ms-5">
+                    <a href="#" class="btn btn-success me-5">Detalles</a>
+                    <button class="btn btn-success rounded-circle ms-5">
                       +
                     </button>
                   </div>
@@ -443,8 +475,8 @@
                       Banjeda de combinaciones
                     </h5>
                     <p class="text-dark text-center">$1299.99</p>
-                    <a href="#" class="btn btn-primary me-5">Detalles</a>
-                    <button class="btn btn-primary rounded-circle ms-5">
+                    <a href="#" class="btn btn-success me-5">Detalles</a>
+                    <button class="btn btn-success rounded-circle ms-5">
                       +
                     </button>
                   </div>
