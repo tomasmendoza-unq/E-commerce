@@ -2,7 +2,11 @@
 
 Repositorio creado con la finalidad de almacenar una pagina de compra y venta
 
+<<<<<<< HEAD
 ![alt text](https://media.discordapp.net/attachments/1009192826128576522/1013107875670917160/logo.png?width=442&height=457)
+=======
+![alt text](../prototipo/public/img/assets/logo.png)(https://media.discordapp.net/attachments/1009192826128576522/1013107875670917160/logo.png?width=442&height=457)
+>>>>>>> main
 
 # Desarroladores de la pagina 🍔
 
