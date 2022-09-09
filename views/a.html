@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+section {
+  text-align: center;
+  margin-top: 2.5%;
+}
+.scroll-arrow {
+  width: 10%;
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+    cursor: pointer;
+    padding:0;
+    margin:0;
+    opacity: 0.5;
+  font-size:34px;
+  transition: 0.2s;
+}
+.scroll-arrow:hover {
+  transition: 0.2s;
+  opacity:1;
+}
+  ul {
+    width: 70%;
+    scroll-behavior: smooth;
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+    text-align: center;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+  }
+    ul::-webkit-scrollbar {
+    display: none;
+  }
+  li {
+    list-style: none;
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+    width: 20%;
+    margin-left: 1.5%;
+    margin-right: 1.5%;
+    filter: grayscale(100%);
+      transition: 0.2s;
+  }
+li, img {
+  width: 500px;
+}
+  li:hover {
+    transition: 0.2s;
+    filter: grayscale(0);
+  }
+    </style>
+</head>
+<body>
+<script>  
+  var imgList = document.getElementById('imgList');
+  var scrollRight = document.getElementById('scroll-right');
+  var scrollLeft = document.getElementById('scroll-left');
+
+// When a user clicks on the right arrow, the ul will scroll 750px to the right
+  scrollRight.addEventListener('click', (event) => {
+    imgList.scrollBy(750, 0);
+});
+
+// When a user clicks on the left arrow, the ul will scroll 750px to the left
+  scrollLeft.addEventListener('click', (event) => {
+    imgList.scrollBy(-750, 0);
+});
+</script>
+<section>
+    <div class="scroll-arrow" id="scroll-left">
+        &#8592;
+      </div>
+      <ul id="imgList">
+        <li><img src="https://images.pexels.com/photos/34950/pexels-photo.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"/></li>
+        <li><img src="https://images.pexels.com/photos/34950/pexels-photo.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"/></li>
+        <li><img src="https://images.pexels.com/photos/34950/pexels-photo.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"/></li>
+        <li><img src="https://images.pexels.com/photos/34950/pexels-photo.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"/></li>
+        <li><img src="https://images.pexels.com/photos/34950/pexels-photo.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"/></li>
+        <li><img src="https://images.pexels.com/photos/34950/pexels-photo.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"/></li>
+      </ul>
+      <div class="scroll-arrow" id="scroll-right" onclick="scrollRight()">
+        &#8594;
+      </div>
+    </section>
+</body>
+</html>
