@@ -12,7 +12,7 @@ Repositorio creado con la finalidad de almacenar una pagina de compra y venta
   
  * **Ricardo Valdivia y Romina Figueroa**: Se encargaron de todo el analisis y requerimientos de la pagina y de la division de tareas.
 
-## Instalación
+## Instalación (requisito: tener node instalado)
 
 Clonar el repo
 
