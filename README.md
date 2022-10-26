@@ -23,6 +23,7 @@ git clone https://github.com/leopoldo109/prototipo-3
 Instalar dependencias
 
 ```
+npm install nodemon
 npm install express
 npm install express-session
 npm install hbs
@@ -34,3 +35,8 @@ npm install sequelize
 
 Crear la base de datos con el nombre e-commerce y exportar en phpmyadmin el sql que se encuentra en la carpeta db_script
 
+Para correr la app 
+
+```
+nodemon (esto dentro de la carpeta donde haya clonado el repo)
+```
