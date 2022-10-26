@@ -11,3 +11,26 @@ Repositorio creado con la finalidad de almacenar una pagina de compra y venta
  * **Oreana Bargas**: Se encargo de todo el diseño de la pagina, contribuyendo con Mockups, tambien se encargo de la creacion de los logos.
   
  * **Ricardo Valdivia y Romina Figueroa**: Se encargaron de todo el analisis y requerimientos de la pagina y de la division de tareas.
+
+## Instalación
+
+Clonar el repo
+
+```
+git clone https://github.com/leopoldo109/prototipo-3
+```
+
+Instalar dependencias
+
+```
+npm install express
+npm install express-session
+npm install hbs
+npm install multer
+npm install mysql2
+npm install sequelize
+
+```
+
+Crear la base de datos con el nombre e-commerce y exportar en phpmyadmin el sql que se encuentra en la carpeta db_script
+
