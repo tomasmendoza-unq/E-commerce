@@ -1,0 +1,585 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  overflow-x: hidden;
+  background-color: rgb(255, 214, 223);
+}
+
+.logo {
+  width: 120px;
+}
+
+.titulo {
+  margin-left: 20px;
+  padding-right: 70px;
+}
+
+.navbar {
+  text-decoration: none;
+}
+
+.nav {
+  margin-right: 80px;
+}
+
+.barra-busqueda {
+  border-radius: 20px;
+  width: 500px;
+  margin-left: 100px;
+}
+
+.linea {
+  height: 25px;
+  width: 100%;
+  background-color: #f8c0d4;
+  font-size: 5px;
+  color: white;
+  padding-top: 2px;
+  font-size: 15px;
+}
+
+.linea a {
+  margin-right: 75px;
+  font-weight: bold;
+}
+
+/* Estilos del carrusel */
+
+.carousel {
+  margin: 20px auto;
+  width: 950px;
+}
+
+.carousel-item img {
+  object-fit: cover;
+  height: 35.25rem;
+}
+
+button:hover {
+  transition: background-color 0.4s;
+  background-color: #ffa9c9d8;
+  color: #ff7cacd8;
+}
+
+/* Estilo de los productos destacados */
+
+.tarjeta {
+  background-color: rgb(255, 227, 232);
+  text-align: center;
+  padding-left: 80px;
+  padding-bottom: 120px;
+}
+
+.tarjeta h2 {
+  color: #ff98a9;
+  margin: 100px 0px 75px;
+  padding-top: 100px;
+}
+
+.card {
+  border: none;
+  background-color: rgb(255, 227, 232);
+  margin-bottom: 25px;
+  width: 18rem;
+}
+
+.card-img-top {
+  height: 12rem;
+  border-radius: 20px;
+  object-fit: cover;
+  box-shadow: 1px 1px 10px 10px rgba(218, 49, 165, 0.153);
+}
+
+.sanrio {
+  position: absolute;
+  width: 80px;
+  left: 240px;
+  top: 150px;
+}
+
+/* Seccion de compra */
+
+.compra {
+  margin: 50px 0px 75px;
+}
+
+.producto-principal {
+  width: 100%;
+  object-fit: cover;
+  height: 41.5rem;
+  border-radius: 50px;
+}
+
+.slider .card {
+  width: 11rem;
+}
+
+.compra h1, 
+.compra h2,
+.compra .price {
+  color: #D68080;
+}
+
+.form-check {
+  color: rgb(183, 44, 104);
+}
+
+.form-check-input {
+  background: #eba2a2;
+  border: none;
+}
+
+.form-check-input:checked {
+  background: #eb6666;
+  border: none;
+  box-shadow: none;
+}
+
+/* Cantidad */
+
+.compra .cantidad p,
+.carrito .cantidad p {
+  margin-left: 6px;
+  font-size: 18px;
+  line-height: 24px;
+  color: #d68080;
+  font-weight: 500;
+}
+
+.compra .cantidad .aumentar,
+.carrito .cantidad .aumentar {
+  width: 85px;
+  background: #de9898;
+  border-radius: 6px;
+}
+
+.compra .cantidad .aumentar button,
+.carrito .cantidad .aumentar button {
+  background: #de9898;
+  border-radius: 6px;
+}
+
+.compra .cantidad .aumentar input,
+.carrito .cantidad .aumentar input {
+  width: 10px;
+  background: #de9898;
+  border-radius: 6px;
+  border: none;
+  color: white;
+  padding: 2px;
+}
+
+.boton {
+  width: 200px;
+  margin: 80px 0px 0px 0px;
+  border-radius: 14px;
+}
+
+.boton button {
+  background: #ff98a9;
+  width: 171px;
+  height: 30px;
+  border-radius: 14px;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  padding: 5px 10px 10px 10px;
+}
+
+.compra .cantidad,
+.compra .boton {
+  width: 100px;
+  margin: 200px 0px 0px 0px;
+}
+
+
+/* Seccion de compra - Productos relacionados */
+
+.producto img {
+  box-shadow: 1px 1px 10px 10px rgba(218, 49, 165, 0.153);
+}
+
+.producto h4 {
+  color: #ff98a9;
+  margin: 150px 0px 40px 5px;
+}
+
+.producto .card {
+  width: 16rem;
+}
+
+/* Mi carrito -------------*/
+
+.container .carrito h1 {
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 48px;
+  color: #de9898;
+  border-bottom: solid #b9b4b4 2px;
+}
+
+.imagen-carrito {
+  width: 200px;
+  height: 160px;
+  border-radius: 6px;
+  box-shadow: 0px 1px 10px 6px rgba(218, 49, 165, 0.153);
+}
+
+.container .descripcion h4 {
+  font-weight: 900;
+  line-height: 24px;
+  color: #d68080;
+}
+
+.container .descripcion p {
+  width: 400px;
+  line-height: 24px;
+  color: #d68080;
+}
+
+.container .precio {
+  font-weight: 900;
+  line-height: 24px;
+  color: #d68080;
+}
+
+.pedido {
+  width: 580px;
+  margin: 100px auto 10px;
+  padding: 30px;
+  border-top: solid #b9b4b4 2px;
+}
+
+.pedido h4,
+.pedido p {
+  line-height: 24px;
+  color: #d68080;
+}
+
+.pedido .btn {
+  background-color: #de9898;
+  line-height: 24px;
+  width: 200px;
+}
+
+/* Reglas para el login */
+
+section .container:not(form .container) {
+  width: 363px;
+  left: 299px;
+  top: 150px;
+  background: rgb(255, 199, 199);
+  border-radius: 22px;
+}
+
+.input-group {
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+.input-group-text {
+  height: 40px;
+}
+
+.text-capitalize {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+
+.btn {
+  background-color: #ff98a9;
+  border: #ff98a9;
+}
+
+.btn:hover {
+  background-color: #ff798f;
+}
+
+section .container form img {
+  position: absolute;
+  width: 198px;
+  top: 0;
+  margin-top: 428px;
+  margin-left: 400px;
+}
+
+form .link-dark {
+  text-decoration: none;
+}
+
+form .link-dark:hover {
+  text-decoration: underline black;
+}
+
+/* Reglas register */
+
+section .register:not(form .register) {
+  width: 513px;
+}
+
+section .register form img {
+  margin-left: 500px;
+}
+
+/* Reglas para ayuda */
+.ayuda {
+  color: #DE9898;
+}
+
+.ayuda-form {
+  background-color: #ffd0d0;
+  border-radius: 18px;
+  color: #d68080;
+  font-weight: 900;
+  height: 467px;
+  width: 730px;
+}
+
+.ayuda .como-comprar,
+.ayuda .medios-pago {
+  width: 500px;
+  color: #7D6B6B;
+}
+
+.ayuda .como-comprar h2,
+.ayuda .medios-pago h2 {
+  border-bottom: #BD8989 3px solid;
+  color: #F27474;
+}
+
+.ayuda .como-comprar .opciones:nth-of-type(2) {
+  border-right: #BD8989 2px solid;
+  border-left: #BD8989 2px solid;
+  padding-right: 8px;
+  padding-left: 8px;
+  margin-right: 8px;
+  margin-left: 8px;
+
+}
+
+/* Media queries */
+
+@media (min-width: 992px) and (max-width: 1149px) {
+  .barra-busqueda {
+    width: 300px;
+    margin-left: 30px;
+  }
+
+  .nav {
+    font-size: 12px;
+  }
+
+  .carousel {
+    width: 650px;
+  }
+
+  .tarjeta {
+    padding-left: 40px;
+  }
+
+  .slider .card {
+    width: 8rem;
+  }
+
+  .slider .card-img-top {
+    height: 8rem;
+  }
+
+  .producto .card {
+    width: 12rem;
+  }
+
+  .container .descripcion p {
+    width: 300px;
+  }
+}
+
+@media (max-width: 991px) {
+  .barra-busqueda {
+    margin: 20px 10px 20px;
+    border-radius: 50px;
+    width: 280px;
+  }
+  .nav {
+    margin-top: 20px;
+    width: 100%;
+  }
+  .carousel {
+    width: 650px;
+  }
+
+  .tarjeta {
+    padding-left: 30px;
+  }
+
+  /* section .register:not(form .register) {
+    height: 570px;
+  } */
+
+  .slider .card {
+    width: 10rem;
+    margin-left: 15px;
+  }
+
+  .slider .card-img-top {
+    height: 10rem;
+  }
+
+  .compra .cantidad,
+  .container .boton {
+    margin-top: 80px;
+  }
+
+  .producto .card {
+    width: 16rem;
+  }
+
+  .check {
+    margin-left: 100px;
+  }
+
+  .ayuda-form {
+    width: 400px;
+  }
+
+}
+
+@media (max-width: 425px) {
+  section .register:not(form .register) {
+    width: 350px;
+    padding: 0;
+    font-size: 14px;
+  }
+
+  .carousel {
+    width: 350px;
+  }
+
+  .carousel-item img {
+    height: 20rem;
+  }
+
+  .tarjeta {
+    padding-left: 60px;
+  }
+
+  .tarjeta h2 {
+    margin-right: 65px;
+  }
+
+  .card {
+    width: 15rem;
+  }
+
+  .card-img-top {
+    height: 10rem;
+  }
+
+  .sanrio {
+    width: 70px;
+    left: 190px;
+    top: 130px;
+  }
+
+  .opciones-compra {
+    padding-left: 0;
+  }
+  .check {
+    margin-left: 30px;
+  }
+  
+  .container .descripcion p {
+    width: 200px;
+  }
+  
+  .pedido {
+    width: 300px;
+  }
+  
+  .ayuda-form {
+    width: 350px;
+  }
+
+  .ayuda .como-comprar,
+  .ayuda .medios-pago {
+    width: 300px;
+  }
+}
+
+@media (max-width: 320px) {
+  .logo {
+    width: 60px;
+  }
+  .titulo {
+    font-size: 20px;
+  } 
+
+  section .container:not(form .container) {
+    width: 280px;
+    padding: 0;
+    font-size: 14px;
+  }
+
+  .carousel {
+    width: 300px;
+  }
+
+  .carousel-item img {
+    height: 14rem;
+  }
+  .card {
+    width: 12rem;
+  }
+  .card-img-top {
+    height: 8rem;
+  }
+  .sanrio {
+    width: 70px;
+    left: 140px;
+    top: 90px;
+  }
+
+  .producto .card {
+    width: 10rem;
+  }
+  
+  .pedido {
+    width: 250px;
+  }
+  
+  .ayuda-form {
+    width: 250px;
+  }
+
+  .ayuda .como-comprar,
+  .ayuda .medios-pago {
+    width: 280px;
+  }
+}
+
+
+/* Estilos del dropdown(desplegables) */
+
+.dropdown-menu {
+  background-color: #d68080;
+}
+
+.dropdown-menu:hover {
+  background-color: #d68080;
+}
+
+/*cuando pasas el puntero se despliega*/
+@media screen {
+  .dropdown:hover .dropdown-menu,
+  .btn-group:hover .dropdown-menu {
+    display: block;
+  }
+}
+
+.carrito-numero{
+  background-color: red;
+}
