@@ -20,7 +20,7 @@ Clonar el repo
 git clone https://github.com/leopoldo109/prototipo-3
 ```
 
-Instalar dependencias
+Instalar dependencias dentro de la carpeta creada del reposotorio clonado
 
 ```
 npm install nodemon
