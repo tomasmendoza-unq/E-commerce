@@ -39,4 +39,6 @@ Para correr la app
 
 ```
 nodemon (esto dentro de la carpeta donde haya clonado el repo)
+o 
+node index
 ```
