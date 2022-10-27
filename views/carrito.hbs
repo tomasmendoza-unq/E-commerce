@@ -152,34 +152,6 @@
                 </li>
               </ul>
             </div>
-            <div class="dropdown my-3">
-              <a
-                class="nav-link link-light dropdown-toggle"
-                data-bs-toggle="dropdown"
-                href="#"
-                role="button"
-                aria-expanded="false"
-                >Combos</a
-              >
-              <ul class="dropdown-menu">
-                <li>
-                  <a class="dropdown-item" href="/productos"
-                    >Rellenar</a
-                  >
-                </li>
-                <li>
-                  <a class="dropdown-item" href="/productos"
-                    >Rellenar</a
-                  >
-                </li>
-                <li><hr class="dropdown-divider" /></li>
-                <li>
-                  <a class="dropdown-item" href="/productos"
-                    >Rellenar</a
-                  >
-                </li>
-              </ul>
-            </div>
             <a class="link-light" href="#">Contacto</a>
           </div>
         </div>
@@ -245,9 +217,7 @@
         <div class="cart">
             <h1>Mi Carrito</h1>
         </div>
-        
-      
-
+        <div class="tbody"></div>
         <div class="pedido">
           <div class="row">
             <div class="col-12 d-inline">
@@ -281,7 +251,7 @@
     <div class="modal fade" id="exampleModal"  tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered">
         <div style="background-color: #d86578; color: white;" class="modal-content p-3 mt-2  card-login card-color">
-          <form id="cheackoutCart">
+          <form method="POST" id="cheackoutCart">
             <div class="row g-3 mb-3">
               <div class="col-md-6">
                 <label for="validationDefault01" class="form-label"> <em>Puntos de encuentro</em> </label>

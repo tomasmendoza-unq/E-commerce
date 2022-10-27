@@ -1,6 +1,6 @@
 function setcarritoVacio(){
-    cartRows.innerHTML = `
-            div class="alert alert-warning my-2 text-center">No tienes productos en el carrito</div>        
+    tbody.innerHTML = `
+            <div class="alert alert-warning my-2 text-center">No tienes productos en el carrito</div>        
     `;
 }
 
@@ -16,6 +16,8 @@ function calcularTotal(products){
 }
 
 let cartRows = document.querySelector(".cart");
+let tbody = document.querySelector(".tbody");
+
 
 let productos = [];
 
@@ -98,33 +100,35 @@ if(localStorage.carrito){
             });
     });
 } else {
-  // setcarritoVacio()
+  setcarritoVacio()
 }
 
 //compra 
 
 let checkoutCart = document.querySelector('#cheackoutCart')
-
-checkoutCart.onsubmit = (e) => {
-  e.preventDefault();
-  const formData = {
-    ordenItems: productos,
-    metodoDePago: cheackoutCart.paymentMethod.value,
-    puntoDeEncuentro: cheackoutCart.punto.value,
-    total: calcularTotal(productos)
-  };
-  fetch("/checkout",{
-    method : "POST",
-    headers:{
-      "Content-Type":"application/json"
-    },
-    body: JSON.stringify(formData)
-  })
-    .then((r) => r.json())
-    .then((res) => {
-      if(res.ok){
-        vaciarCarrito()
-        location.href = `/order/${res.order.id}`
+if (localStorage.carrito){
+  checkoutCart.onsubmit = (e) => {
+    e.preventDefault();
+    const formData = {
+      ordenItems: productos,
+      metodoDePago: checkoutCart.paymentMethod.value,
+      puntoDeEncuentro: checkoutCart.punto.value,
+      total: calcularTotal(productos)
+    };
+    console.log(JSON.stringify(formData))
+    fetch("/checkout",{
+      method : "POST",
+      body: JSON.stringify(formData),
+      headers: {
+        "Content-Type": "application/json"
       }
     })
+      .then((r) => r.json())
+      .then((res) => {
+        if(res.ok){
+          vaciarCarrito()
+          location.redirect(`/order/${res.body.id}`)
+        }
+      })
+  }
 }

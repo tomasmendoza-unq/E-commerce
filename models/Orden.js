@@ -2,7 +2,7 @@ const { Model, DataTypes} = require('sequelize');
 const sequelize = require('../db/Connection');
 
 const { usuarios } = require('../models/Usuario');
-const { ordenesItem } = require('../models/OrdenesItem')
+const { ordenesitem } = require('../models/OrdenesItem')
 
 
 class ordenes extends Model {}
@@ -25,8 +25,8 @@ ordenes.init({
 ordenes.associations = (models) => {
   ordenes.usuarios = ordenes.belongsTo(usuarios, {as: 'usuarios', foreignKey: 'id_usuario'});
 
-  ordenes.ordenesItem= ordenes.hasMany(ordenesItem, {
-      as: "ordenesItem",
+  ordenes.ordenesItem= ordenes.hasMany(ordenesitems, {
+      as: "ordenesitems",
     });
 }
 

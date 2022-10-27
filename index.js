@@ -35,6 +35,8 @@ app.use(session({
 }));
 app.use(express.urlencoded({extended:false}));
 
+app.use(express.json());
+
 //redirecciones
 
 app.get('/', homeController.home);
@@ -60,7 +62,7 @@ app.get('/ayuda', ayudaController.ayuda);
 
 app.get('/productos', productosController.getAll);
 
-app.get('/carrito', /*authMiddleware ,*/carritoController.carrito);
+app.get('/carrito', authMiddleware ,carritoController.carrito);
 
 //traer producto al carrito
 

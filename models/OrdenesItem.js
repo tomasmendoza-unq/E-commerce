@@ -6,31 +6,31 @@ const { productos } = require('../models/Productos.js');
 
 
 
-class ordenesItem extends Model {}
+class ordenesitems extends Model {}
 
-ordenesItem.init({
+ordenesitems.init({
     id: {
         type: DataTypes.INTEGER(),
         primaryKey: true,
         autoIncrement: true,
       },
-    id_orden: DataTypes.STRING(),
-    id_productos: DataTypes.STRING(),
+    // id_orden: DataTypes.INTEGER(),
+    // id_productos: DataTypes.INTEGER(),
     nombre: DataTypes.STRING(),
-    precio: DataTypes.DECIMAL(),
+    precio: DataTypes.INTEGER(),
     cantidad: DataTypes.INTEGER(),
 },{
   sequelize, 
-  modelName: 'ordenesItem' 
+  modelName: 'ordenesitems' 
 });
 
-ordenesItem.associations = (models) =>{
-  ordenesItem.ordenes = ordenesItem.belongsTo(ordenes, {as: "ordenes", foreignKey: 'id_orden'} );
+ordenesitems.associations = (models) =>{
+  ordenesitems.ordenes = ordenesitems.belongsTo(ordenes, {as: "ordenes", foreignKey: 'id_orden'} );
 
-  ordenesItem.productos = ordenesItem.belongsTo(productos, {as: 'productos', foreignKey: 'id_productos'});
+  ordenesitems.productos = ordenesitems.belongsTo(productos, {as: 'productos', foreignKey: 'id_productos'});
   
 }
 
 module.exports = {
-  ordenesItem
+  ordenesitems
 }
