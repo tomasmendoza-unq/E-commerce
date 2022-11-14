@@ -40,9 +40,11 @@ async function create(req,res, file){
             { 
                 nombre: datos.producto, 
                 imagen: destino,
-                precio: datos.precio
+                precio: datos.precio,
+                detalles: datos.detalles,
+                categoria: datos.categoria
             });
-        res.send("se subio correctamente el producto")
+        res.render(`index`)
     }
 
 module.exports={

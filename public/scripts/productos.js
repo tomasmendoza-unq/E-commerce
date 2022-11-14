@@ -3,6 +3,10 @@ function productosEnElCarrito(){
 
 }
 
+
+
+
+botonesComprar = document.querySelectorAll(".addToCart");
 botonesComprar = document.querySelectorAll(".addToCart");
 let numeroCarrito = document.querySelector(".carrito-numero")
 numeroCarrito.innerText = productosEnElCarrito()
@@ -38,3 +42,4 @@ botonesComprar.forEach(boton => {
     numeroCarrito.innerText = productosEnElCarrito()
   });
 });
+

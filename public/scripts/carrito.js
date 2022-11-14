@@ -84,7 +84,7 @@ if(localStorage.carrito){
                       </div>
                     </div>`;
                 productos.push({
-                    productId: product.id,
+                    productId: item.id,
                     nombre: product.nombre,
                     precio: product.precio,
                     cantidad: item.cantidad
@@ -127,7 +127,7 @@ if (localStorage.carrito){
       .then((res) => {
         if(res.ok){
           vaciarCarrito()
-          location.redirect(`/order/${res.body.id}`)
+          toastr["success"]('Su orden fue recibida ')
         }
       })
   }

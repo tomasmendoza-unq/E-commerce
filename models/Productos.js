@@ -12,6 +12,7 @@ productos.init({
     nombre: DataTypes.STRING,
     imagen: DataTypes.STRING,
     precio: DataTypes.INTEGER,
+    detalles: DataTypes.INTEGER,
     categoria: DataTypes.STRING
 },{
   sequelize, 

@@ -16,14 +16,18 @@ module.exports= {
         let orden = await ordenes.create(
           { ...req.body, id_usuario: req.session.user }
         );
-        let ordenitem = await ordenesitems.create(
-          {
-            nombre: data[0].nombre,
-            precio: data[0].precio,
-            cantidad: data[0].cantidad
-          },
-        );
+        for (let index = 0; index < data.length; index++) {
+          let ordenitem = await ordenesitems.create(
+            {
+              id_orden: orden.id_orden,
+              id_productos: data[index].productId,
+              nombre: data[index].nombre,
+              precio: data[index].precio,
+              cantidad: data[index].cantidad
+            },
+          );
+        }
+        
         res.json({ ok: true, status: 200, order: orden });
-        res.send("se realizo la compra")
       },
 }
