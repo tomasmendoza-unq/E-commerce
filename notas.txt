@@ -1,0 +1,9 @@
+hacer categorias de producto
+
+paginacion
+
+realizar compras
+
+aumentar o disminuir cantidad
+
+ver ordenes

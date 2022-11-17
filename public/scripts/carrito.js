@@ -10,7 +10,7 @@ function vaciarCarrito(){
 
 function calcularTotal(products){
     return products.reduce(
-        (acum,products) => (acum += products.precio + products.cantidad -1),
+        (acum,products) => (acum += products.precio * products.cantidad),
         0
     );
 }
@@ -53,12 +53,13 @@ if(localStorage.carrito){
                           <div class="aumentar">
                             <button
                               type="button"
-                              class="btn btn-danger btn-number d-inline"
+                              class="btn btn-danger btn-number d-inline decremento"
+                              data-id="${item.id}"
                             >
                               -
                             </button>
-                            <input type="text" class="d-inline" value="${item.cantidad}" />
-                            <button type="button" class="btn btn-success d-inline">
+                            <input type="text" id="cantidad" class="d-inline" value="${item.id}" />
+                            <button type="button" class="btn btn-success d-inline aumento" data-id="{{id_producto}}">
                               +
                             </button>
                           </div>
@@ -103,6 +104,7 @@ if(localStorage.carrito){
   setcarritoVacio()
 }
 
+
 //compra 
 
 let checkoutCart = document.querySelector('#cheackoutCart')
@@ -132,3 +134,49 @@ if (localStorage.carrito){
       })
   }
 }
+
+
+
+// Aumentar
+
+  let aumentar = document.querySelectorAll("aumentar");
+  let valor = document.querySelectorAll("cantidad");
+
+  aumentar.forEach(boton => {
+
+    let carrito = JSON.parse(localStorage.carrito)
+
+    boton.addEventListener("click", (e)=>{
+  
+      let index = (carrito.findIndex(prod=>prod.id == e.target.dataset.id));
+      
+      console.log(index)
+      //si el producto esta en el carrito le sumo uno
+      if(index != -1){
+        console.log(carrito[index].cantidad++);
+        console.log(valor.value++);
+      }
+  
+    });
+  });
+  
+
+
+  let decrementar = document.querySelectorAll("decremento")
+  decrementar.forEach(boton => {
+
+    let carrito = JSON.parse(localStorage.carrito)
+    
+    boton.addEventListener("click", (e)=>{
+      
+
+      let index = (carrito.findIndex(prod=>prod.id == e.target.dataset.id));
+    
+      //si el producto esta en el carrito le sumo uno
+      if(index != -1){
+        carrito[index].cantidad--;
+        valor--;
+      }
+  
+    });
+  });

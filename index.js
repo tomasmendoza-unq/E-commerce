@@ -48,7 +48,14 @@ app.engine('hbs', exphbs.engine({
     defaultLayout: 'main',
     layoutDir: path.join(__dirname, 'views/layouts'),
     partialsDir: path.join(__dirname, 'views/partials'),
-    handlebars: allowInsecurePrototypeAccess(_handlebars)
+    handlebars: allowInsecurePrototypeAccess(_handlebars),
+    // helpers
+    helpers: {
+        foreach: function(ary, max, options) {
+            if (!Array.isArray(arr)) { return []; }
+            return arr.slice(0, limit);
+        }
+    }
 }))
 
 app.set('view engine', 'hbs')

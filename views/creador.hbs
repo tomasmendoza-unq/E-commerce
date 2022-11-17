@@ -1,6 +1,6 @@
 {{> navbar}}
         <h1>Subida de productos</h1>
-        <div class="container">
+        <div class="container pb-5">
             <form  action="/files" method="post" enctype="multipart/form-data">
                 <input 
                     type="text"
@@ -53,6 +53,8 @@
                     value="subir" 
                     class="form-control"    
                 />
+                {{foreach 7}}
             </form>
         </div>
 {{> footer}}
+
