@@ -11,8 +11,12 @@ async function getAll(req, res,next) {
     res.render('perfil', {Usuarios, res})
 }
 
+function editar (req, res) {
+    res.render('perfil-editar')
+}
 
 
 module.exports = {
-    getAll
+    getAll,
+    editar
 };

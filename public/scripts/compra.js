@@ -15,6 +15,7 @@ function productosEnElCarrito(){
   let aumentar = document.querySelector(".aumento")
 
 
+  
   numeroCarrito.innerText = productosEnElCarrito()
   
   botonesComprar.forEach(boton => {

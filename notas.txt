@@ -1,9 +1,3 @@
-hacer categorias de producto
+hacer el metodo de pago
 
-paginacion
-
-realizar compras
-
-aumentar o disminuir cantidad
-
-ver ordenes
+ver ordenes tanto admin como usuario

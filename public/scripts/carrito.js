@@ -46,20 +46,11 @@ if(localStorage.carrito){
                         </p>
                       </div>
                       <div
-                        class="cantidad col-lg-1 col-md-4 col-3 order-lg-2 order-3 mx-5"
+                        class="cantidad valor col-lg-1 col-md-4 col-3 order-lg-2 order-3 mx-5"
                       >
                         <p>cantidad</p>
-                        <div class="aumentar">
-                          <button
-                            type="button"
-                            class="btn btn-danger btn-number d-inline"
-                          >
-                            -
-                          </button>
-                          <input type="text" class="d-inline" value="${item.cantidad}" />
-                          <button type="button" class="btn btn-success d-inline">
-                            +
-                          </button>
+                        <div class="aumentar d-flex content-justify-center">
+                          <input type="text"value="${item.cantidad}" />
                         </div>
                       </div>
                       <div
@@ -70,15 +61,6 @@ if(localStorage.carrito){
                           product.precio * item.cantidad,
                           2
                         ).toFixed(2)}
-                      </div>
-                      <div class="col-1 order-lg-4 order-2 mt-5 mx-3">
-                        <a href="#">
-                          <iconify-icon
-                            icon="bi:x"
-                            style="color: #de9898"
-                            width="40"
-                          ></iconify-icon>
-                        </a>
                       </div>
                     </div>
                   </div>`;
@@ -130,4 +112,13 @@ checkoutCart.onsubmit = (e) => {
       }
     })
 }
+}
+
+let vaciar = document.querySelector(".vaciar")
+
+if (localStorage.carrito){
+  vaciar.addEventListener("click", () => {
+    vaciarCarrito()
+    window.location.reload()
+  })
 }
