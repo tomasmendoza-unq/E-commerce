@@ -21,44 +21,39 @@
           class="col-3 col-xl-2 rounded d-none d-lg-block"
           style="background-color: rgb(255, 184, 184)"
         >
-          <div class="align-items-start px-0 pt-2 text-white">
-            <a
-              href="#"
-              class="d-flex align-items-center pb-3 text-white text-decoration-none"
-            >
+          <div class="align-items-start px-0 pt-2 text-dark">
               <span class="fs-3">Categorías</span>
-            </a>
             <hr />
             <ul class="nav nav-pills mx-auto mb-auto align-items-start">
               <li class="mb-3 w-100">
                 <ul class="nav ms-2 flex-column">
                   <li>
-                    <a href="#" class="nav-link link-light px-0 fs-6"
+                    <a href="/categoria/Chocolate" class="nav-link link-dark px-0 fs-6"
                       >Chocolate</a
                     >
                   </li>
                   <li>
-                    <a href="#" class="nav-link link-light px-0 fs-6"
+                    <a href="/categoria/Gomitas" class="nav-link link-dark px-0 fs-6"
                       >Gomitas</a
                     >
                   </li>
                   <li>
-                    <a href="#" class="nav-link link-light px-0 fs-6"
+                    <a href="/categoria/Bombones" class="nav-link link-dark px-0 fs-6"
                       >Bombones</a
                     >
                   </li>
                   <li>
-                    <a href="#" class="nav-link link-light px-0 fs-6"
+                    <a href="/categoria/Caramelos" class="nav-link link-dark px-0 fs-6"
                       >Caramelos</a
                     >
                   </li>
                   <li>
-                    <a href="#" class="nav-link link-light px-0 fs-6"
+                    <a href="/categoria/Pastillitas" class="nav-link link-dark px-0 fs-6"
                       >Pastillitas</a
                     >
                   </li>
                   <li>
-                    <a href="#" class="nav-link link-light px-0 fs-6"
+                    <a href="/categoria/Malvadiscos" class="nav-link link-dark px-0 fs-6"
                       >Malvadiscos</a>
                   </li>
                 </ul>
@@ -74,7 +69,7 @@
         <div class="col">
           <div class="container">
             <div class="producto-conjunto row ms-4">
-              {{#each productos}}
+              {{#each producto }}
               <div class="producto-muestra col-12 col-md-6 col-xl-4 mb-5">
                 <div
                   class="card p-3"
@@ -85,7 +80,7 @@
                   "
                 >
                   <img
-                    src="{{imagen}}"
+                    src="/{{imagen}}"
                     class="card-img-top imagen"
                     alt="..."
                   />
@@ -110,19 +105,9 @@
 
     <nav aria-label="Page navigation example">
       <ul class="pagination justify-content-center">
-        <li class="page-item disabled">
-          <a class="page-link" href="#" aria-label="Previous">
-            <span aria-hidden="true">&laquo;</span>
-          </a>
-        </li>
-        <li class="page-item"><a class="page-link" href="#">1</a></li>
-        <li class="page-item"><a class="page-link" href="#">2</a></li>
-        <li class="page-item"><a class="page-link" href="#">3</a></li>
-        <li class="page-item">
-          <a class="page-link" href="#" aria-label="Next">
-            <span aria-hidden="true">&raquo;</span>
-          </a>
-        </li>
+        <li class="page-item" ><a class="page-link" href="/productos/6&12">1</a></li>
+        <li class="page-item" ><a class="page-link" href="/productos/12&18">2</a></li>
+        <li class="page-item" ><a class="page-link" href="/productos/18&24">3</a></li>
       </ul>
     </nav>
 
@@ -143,4 +128,5 @@
         integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw=="
         crossorigin="anonymous"></script>
 
-    <script src="scripts/productos.js"></script>
+    <script src="/scripts/productos.js"></script>
+

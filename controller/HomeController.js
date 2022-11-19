@@ -3,31 +3,17 @@ const sequelize = require('../db/Connection.js');
 
 const {productos} = require('../models/Productos')
 
-async function Home(req, res) {
-    if(req.session.user){
-            
-        let producto = await productos.findAll();
+async function Home(req, res) { 
+    let producto = await productos.findAll({offset: 0, limit: 6, where: { destacado: true } })
 
-        let loggedin= true
-        let log= {
-            loggedin,
-            productos: producto
-        }
-        res.render('index',log)
-    }else{
-                    
-        let producto = await productos.findAll();
+    console.log(producto)
 
-        let log= {
-            productos: producto
-        }
-        res.render('index',log )
-    }
+    res.render('index', {res, producto})
 }
 
 
 function notfound(req, res) {
-    res.render('not-found-page')
+    res.render('not-found-page', {res})
 }
 
 module.exports = {

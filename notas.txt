@@ -1,0 +1,3 @@
+hacer el metodo de pago
+
+ver ordenes tanto admin como usuario

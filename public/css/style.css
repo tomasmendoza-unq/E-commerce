@@ -149,27 +149,31 @@ button:hover {
   font-weight: 500;
 }
 
-.compra .cantidad .aumentar,
-.carrito .cantidad .aumentar {
-  width: 85px;
+.compra .cantidad .aumentar{
+  width: 92px;
   background: #de9898;
   border-radius: 6px;
 }
 
-.compra .cantidad .aumentar button,
-.carrito .cantidad .aumentar button {
+.compra .cantidad .aumentar button{
   background: #de9898;
   border-radius: 6px;
 }
 
 .compra .cantidad .aumentar input,
 .carrito .cantidad .aumentar input {
-  width: 10px;
+  width: 16px;
   background: #de9898;
   border-radius: 6px;
   border: none;
   color: white;
-  padding: 2px;
+}
+
+.carrito .cantidad .aumentar input {
+  width: 10px;
+  border-radius: 6px;
+  border: none;
+  color: white;
 }
 
 .boton {

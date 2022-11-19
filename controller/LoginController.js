@@ -3,59 +3,47 @@ const sequelize = require('../db/Connection.js');
 
 const {usuarios} = require('../models/Usuario')
 
-const {productos} = require('../models/Productos')
 
 
 async function login(req, res) {
-    if(req.session.user){
-        let producto = await productos.findAll();
-
-        let loggedin= true
-        let log= {
-            loggedin,
-            productos: producto
-        }
-        res.render('login',log)
-    }else{
-        let producto = await productos.findAll();
-
-        let log= {
-            productos: producto
-        }
-        res.render('login',log )
-    }
+    res.render('login', {res})
 }
 
-async function logeo(req, res){
+async function logeo(req, res,next){
     const datos = req.body;
     let user = await usuarios.findOne({ where: { email: datos.email} });
 
     if (!user) {
         let loggedin= true
-        let log= {
-            loggedin
-        }
-        res.render("login", log)
-    }else if (datos.contraseña !== user.contraseña){
+        res.render("login", {loggedin, res })
+
+    }else if (datos.contraseña !== user.contraseña) {
         let loggedin= true
-        let log= {
-            loggedin
-        }
-        res.render("login", log)
-    }else{
+
+        res.render("login", {loggedin, res})
+
+    } else {
+        res.locals.userFound = true;
+
         req.session.user= user.id_usuario;
-        let loggedin= true
-        let log= {
-            loggedin
-        }
-        console.log(req.session.user);
-        res.render("index", log)
+        
+        res.render("index", {res})
+
     }
+
+}
+
+function logout (req,res){
+    req.session.destroy()
+    res.locals.userFound = false;
+
+    res.render("index", {res})
 }
 
 
 module.exports = {
     login : login,
-    logeo : logeo
+    logeo : logeo,
+    logout : logout
 
 }

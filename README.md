@@ -20,16 +20,16 @@ Clonar el repo
 git clone https://github.com/leopoldo109/prototipo-3
 ```
 
+Descargar nodejs, desde la pagina oficial
+
+```
+https://nodejs.org/es/
+```
+
 Instalar dependencias dentro de la carpeta creada del reposotorio clonado
 
 ```
-npm install nodemon
-npm install express
-npm install express-session
-npm install hbs
-npm install multer
-npm install mysql2
-npm install sequelize
+npm i
 
 ```
 

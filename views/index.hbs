@@ -55,15 +55,17 @@ Carrusel
     <!--
       Productos destacados
     -->
+    
     <div class="tarjeta">
       <div class="container">
         <h2>Productos descatados</h2>
         <div class="row">
+          {{#producto}}
           <div class="col-12 mb-5 col-md-6 col-lg-4">
             <a href="/compra">
               <div class="card">
                 <img
-                  src="img/productos/999.jpg"
+                  src="{{imagen}}"
                   class="card-img-top"
                   alt="..."
                 />
@@ -75,6 +77,8 @@ Carrusel
               </div>
             </a>
           </div>
+          {{/producto}}
+{{!-- 
           <div class="col-12 mb-5 col-md-6 col-lg-4">
             <a href="/compra">
               <div class="card">
@@ -154,10 +158,11 @@ Carrusel
                 />
               </div>
             </a>
-          </div>
+          </div> --}}
         </div>
       </div>
     </div>
+
 
 {{> footer}}
 
