@@ -361,6 +361,27 @@ section .register form img {
 
 }
 
+/* Perfil */
+
+.cuenta { margin-bottom: 20%; }
+
+.cuenta h1,
+.cuenta h2 {
+  color: #fc6fa3;
+}
+
+.cuenta .compras-realizadas,
+.cuenta .datos-personales {
+  border-top: 2px #fc6fa3 solid;
+  border-bottom: 2px #fc6fa3 solid;
+}
+
+.cuenta .compras-finalizadas {
+  padding: 5px;
+  border-radius: 10px;
+  border: 2px #fc6fa3 solid;
+}
+
 /* Media queries */
 
 @media (min-width: 992px) and (max-width: 1149px) {

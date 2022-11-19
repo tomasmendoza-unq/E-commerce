@@ -1,9 +1,11 @@
 {{> navbar}}
     <section>
-      <!-- Form -->
+      {{!-- Formulario para registrarse --}}
       <div class="container register my-5">
         <form action="/register" method="post" class="p-5 w-100">
             <h1 class="text-capitalize text-light">Registro</h1>
+            
+            {{!--  --}}
             <div class="row">
               <div class="col-lg-6">
                 <div class="input-group mb-3">
@@ -112,8 +114,9 @@
           />
         </form>
       </div>
+      {{!-- Fin del formulario --}}
     </section>
-
-<script src="scripts/productos.js"></script>
-
 {{> footer}}
+
+{{!-- Scripts --}}
+<script src="scripts/productos.js"></script>

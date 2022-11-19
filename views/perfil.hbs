@@ -1,10 +1,68 @@
-{{> navbar}
+{{> navbar}}
+<div class="cuenta container">
+<h1 class="text-center text-decoration-underline mt-5">Mi perfil</h1>
+  <div class="row">
 
-<h1>Bienvenido</h1>
-{{#Usuarios}}
-    <h2>{{nombre}}</h2>
-    <h3>Datos personales</h3>
-{{/Usuarios}}
-<a href="/logout">logout</a>
+		{{!-- Sección de datos personales --}}
+    <div class="col-12 col-lg-6 p-5">
+			<div class="d-flex justify-content-between mt-5">
+				<h2 class="fs-4">Datos personales</h2>
+				<a class="link-dark" href="/editar-perfil">Editar</a>
+			</div>      
+			<div
+        class="datos-personales  py-4"
+      >
+        {{#Usuarios}}
+          <h3 class="fs-5 pb-4">Usuario: {{nombre}}</h3>
+          <h3 class="fs-5 pb-4">Correo: {{email}}</h3>
+					<a class="link-dark fs-5" href="/logout">Desconectarse</a>
+        {{/Usuarios}}
+      </div>
+    </div>
+		{{!-- Fin de sección de datos personales --}}
 
+		{{!-- Sección de campras realizadas --}}
+    <div class="col-12 col-lg-6 p-5 mt-5 mt-lg-0">
+      <h2 class="mt-5 fs-4 text-center">Compras realizadas</h2>
+      <div
+        class="compras-realizadas text-center py-4"
+      >
+        <iconify-icon
+          icon="el:shopping-cart"
+          style="color: rgb(127, 127, 127);"
+          width="60"
+        ></iconify-icon>
+        <br />
+        <a href="" class="btn btn-primary my-3">Ir a la tienda</a>
+				
+				{{!-- Sección de compras realizadas con un producto --}}
+				<div class="compras-finalizadas p-3">
+					<h3 class="fs-5 text-start">Bandeja gomitas 5 divisiones</h3>
+					<p class="fs-5 text-start">$1250</p>
+					<div class="d-flex justify-content-between">
+						<span>Finalizado</span>
+						<a href="">ver detalles</a>
+					</div>
+				</div>
+				{{!-- Fin de la sección de compras realizadas con un producto --}}
+      
+			</div>
+    </div>
+		{{!-- Fin de sección de compras realizadas --}}
+
+
+  </div>
+</div>
 {{> footer}}
+
+<!-- Scripts -->
+
+<script
+  src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+  crossorigin="anonymous"
+></script>
+
+<script
+  src="https://code.iconify.design/iconify-icon/1.0.0/iconify-icon.min.js"
+></script>
