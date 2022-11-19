@@ -1,12 +1,17 @@
 const { Model, DataTypes,} = require('sequelize');
 const sequelize = require('../db/Connection.js');
 
-const multer  = require('multer')
-const {productos} = require('../models/Productos')
-const path = require('path')
+const {productos} = require ('../models/Productos')
 
-function creador(req, res){
-    res.render('creador')
+const multer  = require('multer')
+const path = require('path');
+
+async function creador(req, res){
+    if (req.session.user === 1) {
+        res.render('creador', {res})
+    } else {
+        res.render("index", {res})
+    }
 }
 
 var destino = ""
@@ -35,16 +40,17 @@ var upload = multer({storage: storage,
 
 async function create(req,res, file){
         const datos = req.body 
-        console.log(destino)
+
         const product = await productos.create(
             { 
                 nombre: datos.producto, 
                 imagen: destino,
                 precio: datos.precio,
                 detalles: datos.detalles,
-                categoria: datos.categoria
+                categoria: datos.categoria,
+                destacado: datos.destacado ? true : false,
             });
-        res.render(`index`)
+        res.render(`index`, {res})
     }
 
 module.exports={

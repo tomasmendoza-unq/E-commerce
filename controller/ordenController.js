@@ -7,6 +7,6 @@ module.exports = {
       let order = await ordenes.findByPk(req.params.id, {
         include: ordenes.ordenesItem,
       });
-      return res.render("orden", { order });
+      return res.render("orden", { order, res });
     },
   };

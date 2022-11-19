@@ -1,112 +1,46 @@
+<head>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css"
+        integrity="sha512-vKMx8UnXk60zUwyUnUPM3HbQo8QfmNx7+ltw8Pm5zLusl1XIfwcxo8DbWCqMGKaWeNxWA8yrx5v3SaVpMvR3CA=="
+        crossorigin="anonymous" />
+</head>
+
+
+
 {{> navbar}}
 
     <div class="compra">
       <div class="container">
         {{#product}}
         <h1>{{nombre}}</h1>
-        <p class="fs-1 price">${{precio}}</p>
 
+        <p class="fs-1 price">${{precio}}</p>
         <div class="row">
           <div class="d-lg-block col-lg-8 col-md-12">
             <img
               src="/{{imagen}}"
               class="producto-principal img-fluid"
             />
+        {{/product}}
+
             <div class="slider d-lg-block mt-5">
               <div class="row">
+                {{#each relacionado}}
                 <div class="col-6 col-sm-3">
-                  <div class="card">
-                    <img
-                      src="/img/productos/12383fce5eadb7aa759c322bc42e9289.jpg"
-                      class="card-img-top"
-                      alt="..."
-                    />
-                  </div>
+                  <a href="/compra/{{id_producto}}">
+                    <div class="card">
+                      <img
+                        src="/{{imagen}}"
+                        class="card-img-top"
+                        alt="..."
+                      />
+                    </div>
+                  </a>
                 </div>
-                <div class="col-6 col-sm-3">
-                  <div class="card">
-                    <img
-                      src="/img/productos/12383fce5eadb7aa759c322bc42e9289.jpg"
-                      class="card-img-top"
-                      alt="..."
-                    />
-                  </div>
-                </div>
-                <div class="col-6 col-sm-3">
-                  <div class="card">
-                    <img
-                      src="/img/productos/12383fce5eadb7aa759c322bc42e9289.jpg"
-                      class="card-img-top"
-                      alt="..."
-                    />
-                  </div>
-                </div>
-                <div class="col-6 col-sm-3">
-                  <div class="card">
-                    <img
-                      src="/img/productos/12383fce5eadb7aa759c322bc42e9289.jpg"
-                      class="card-img-top"
-                      alt="..."
-                    />
-                  </div>
-                </div>
+                {{/each}}
               </div>
             </div>
           </div>
-          <!-- Carrusel para el mobile design -->
-          <div
-            id="carouselExampleControls"
-            class="d-lg-none carousel slide"
-            data-bs-ride="carousel"
-          >
-            <button
-              class="carousel-control-prev"
-              type="button"
-              data-bs-target="#carouselExampleControls"
-              data-bs-slide="prev"
-            >
-              <span
-                class="carousel-control-prev-icon"
-                aria-hidden="true"
-              ></span>
-              <span class="visually-hidden">Previous</span>
-            </button>
-            <div class="carousel-inner rounded">
-              <div class="carousel-item active">
-                <img
-                  src="/img/productos/999.jpg"
-                  class="d-block w-100"
-                  alt="..."
-                />
-              </div>
-              <div class="carousel-item">
-                <img
-                  src="/img/productos/f64f8ec7-2c7b-4efd-81ea-1b449c47422d.jpg"
-                  class="d-block w-100"
-                  alt="..."
-                />
-              </div>
-              <div class="carousel-item">
-                <img
-                  src="/img/productos/44.jpg"
-                  class="d-block w-100"
-                  alt="..."
-                />
-              </div>
-            </div>
-            <button
-              class="carousel-control-next"
-              type="button"
-              data-bs-target="#carouselExampleControls"
-              data-bs-slide="next"
-            >
-              <span
-                class="carousel-control-next-icon"
-                aria-hidden="true"
-              ></span>
-              <span class="visually-hidden">Next</span>
-            </button>
-          </div>
+        {{#product}}
 
           <div class="opciones-compra col-lg-4 col-md-12 pt-0 pt-sm-5 ps-0 ps-sm-5">
             <h2 class="text-center px-0">Detalles</h2>
@@ -119,28 +53,29 @@
                 <div class="aumentar" style="background: #ff98a9">
                   <button
                     type="button"
-                    class="btn btn-danger btn-number d-inline"
+                    class="btn btn-danger btn-number d-inline decrementar"
                     style="background: #ff98a9"
                   >
                     -
                   </button>
                   <input
                     type="text"
-                    class="d-inline"
+                    class="d-inline valor"
                     value="1"
                     style="background: #ff98a9"
                   />
                   <button
                     type="button"
-                    class="btn btn-success d-inline"
+                    class="btn btn-success d-inline aumento"
                     style="background: #ff98a9"
+                    data-id="{{id_producto}}"
                   >
                     +
                   </button>
                 </div>
               </div>
-              <div class="boton ps-4 ps-sm-0">
-                <button type="button" class="btn btn-primary">
+              <div class="boton ps-4 pb-md-5 ps-sm-0">
+                <button type="button" class="btn btn-primary addToCart" data-id="{{id_producto}}">
                   Agregar al carrito
                 </button>
               </div>
@@ -149,61 +84,7 @@
         </div>
       </div>
     </div>
-        {{/product}}
-    <!--
-      productos relacionados    
-    -->
-    <div class="producto">
-      <div class="container">
-        <h4 class="text-center">Productos relacionados</h4>
-        <div class="row ps-5 ps-sm-3 ms-2 ms-sm-0">
-          <div class="col-12 mb-5 col-sm-6 col-lg-3">
-            <a href="/compra">
-              <div class="card">
-                <img
-                  src="/img/productos/999.jpg"
-                  class="card-img-top"
-                  alt="..."
-                />
-              </div>
-            </a>
-          </div>
-          <div class="col-12 mb-5 col-sm-6 col-lg-3">
-            <a href="/compra">
-              <div class="card">
-                <img
-                  src="/img/productos/44.jpg"
-                  class="card-img-top"
-                  alt="..."
-                />
-              </div>
-            </a>
-          </div>
-          <div class="col-12 mb-5 col-sm-6 col-lg-3">
-            <a href="/compra">
-              <div class="card">
-                <img
-                  src="/img/productos/bdfe468028dd39f4e38f3d5784cae42d.jpg"
-                  class="card-img-top"
-                  alt="..."
-                />
-              </div>
-            </a>
-          </div>
-          <div class="col-12 mb-5 col-sm-6 col-lg-3">
-            <a href="/compra">
-              <div class="card">
-                <img
-                  src="/img/productos/c3abb2025c65e8bf5359fea950e6a284.jpg"
-                  class="card-img-top"
-                  alt="..."
-                />
-              </div>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
+    {{/product}}
 
 {{> footer}}
 
@@ -213,4 +94,15 @@
   integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
   crossorigin="anonymous"
 ></script>
+
 <script src="https://code.iconify.design/iconify-icon/1.0.0/iconify-icon.min.js"></script>
+
+<script src="/scripts/compra.js"></script>
+
+    <!-- jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+    <!-- Toast js Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"
+        integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw=="
+        crossorigin="anonymous"></script>

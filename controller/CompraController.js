@@ -5,7 +5,16 @@ const {productos} = require('../models/Productos')
 
 async function compra(req, res) {
     let product = await productos.findByPk(req.params.id);
-    res.render("compra", { product });
+
+    let relacionado = await productos.findAll({ 
+        where: { 
+            categoria: product.categoria 
+        },
+        offset: 0,
+        limit: 4,
+    })
+
+    res.render("compra", { product, res, relacionado});
 }
 
 module.exports = {

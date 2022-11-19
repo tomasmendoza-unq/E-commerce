@@ -13,7 +13,8 @@ productos.init({
     imagen: DataTypes.STRING,
     precio: DataTypes.INTEGER,
     detalles: DataTypes.INTEGER,
-    categoria: DataTypes.STRING
+    categoria: DataTypes.STRING,
+    destacado: DataTypes.TINYINT
 },{
   sequelize, 
   modelName: 'productos' 
