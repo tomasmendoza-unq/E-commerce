@@ -1,0 +1,76 @@
+{{> navbar}}
+<div class="cuenta container p-5">
+  <h1 class="text-center text-decoration-underline">Mi perfil</h1>
+  {{!-- Formulario para editar datos personales --}}
+  <form>
+    <div class="row mt-5">
+      <div class="col-12 col-lg-6">
+        <div class="mb-3">
+          <label
+            for="exampleFormControlInput1"
+            class="form-label fw-bold"
+          >Nombre</label>
+          <input
+            type="email"
+            class="form-control"
+            id="exampleFormControlInput1"
+          />
+        </div>
+      </div>
+      <div class="col-12 col-lg-6">
+        <div class="mb-3">
+          <label
+            for="exampleFormControlInput1"
+            class="form-label fw-bold"
+          >Apellido</label>
+          <input
+            type="email"
+            class="form-control"
+            id="exampleFormControlInput1"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label fw-bold">Correo
+        electronico</label>
+      <input type="email" class="form-control" id="exampleFormControlInput1" />
+    </div>
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label fw-bold">Correo
+        electronico</label>
+      <input type="email" class="form-control" id="exampleFormControlInput1" />
+    </div>
+
+    {{!-- Formularios para contraseñas --}}
+    <h2 class="fs-5 text-decoration-underline my-5">Cambio de contraseña (Dejar en blanco para no cambiar nada)</h2>
+    <div class="mb-3">
+      <label for="inputPassword" class="form-label fw-bold">Contraseñaa actual</label>
+      <input type="password" class="form-control" id="inputPassword">
+    </div>
+    <div class="mb-3">
+      <label for="inputPassword" class="form-label fw-bold">Nueva contraseña</label>
+      <input type="password" class="form-control" id="inputPassword">
+    </div>
+    <div class="mb-3">
+      <label for="inputPassword" class="form-label fw-bold">Confirmar nueva contraseña</label>
+      <input type="password" class="form-control" id="inputPassword">
+    </div>
+
+    {{!-- Botón para enviar datos --}}
+    <button type="submit" class="btn btn-primary mb-3">Guardar cambios</button>
+  </form>
+</div>
+{{> footer}}
+
+<!-- Scripts -->
+
+<script
+  src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+  crossorigin="anonymous"
+></script>
+
+<script
+  src="https://code.iconify.design/iconify-icon/1.0.0/iconify-icon.min.js"
+></script>
