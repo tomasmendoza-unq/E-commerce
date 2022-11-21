@@ -1,22 +1,25 @@
-const { Model, DataTypes,} = require('sequelize');
-const sequelize = require('../db/Connection.js');
+const { Model, DataTypes } = require("sequelize");
+const sequelize = require("../db/Connection.js");
 
-const {productos} = require('../models/Productos')
+const { productos } = require("../models/Productos");
 
-async function Home(req, res) { 
-    let producto = await productos.findAll({offset: 0, limit: 6, where: { destacado: true } })
+async function Home(req, res) {
+  let producto = await productos.findAll({
+    offset: 0,
+    limit: 6,
+    where: { destacado: true },
+  });
 
-    console.log(producto)
+  console.log(producto);
 
-    res.render('index', {res, producto})
+  res.render("index", { res, producto });
 }
 
-
 function notfound(req, res) {
-    res.render('not-found-page', {res})
+  res.render("not-found-page", { res });
 }
 
 module.exports = {
-    home : Home,
-    notfound
-}
+  home: Home,
+  notfound,
+};

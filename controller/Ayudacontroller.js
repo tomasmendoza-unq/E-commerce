@@ -1,9 +1,7 @@
 async function ayuda(req, res) {
-
-    res.render('ayuda', {res})
+  res.render("ayuda", { res });
 }
-
 
 module.exports = {
-    ayuda
-}
+  ayuda,
+};
