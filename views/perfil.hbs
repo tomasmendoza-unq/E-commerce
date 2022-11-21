@@ -1,10 +1,129 @@
-{{>navbar}}
+{{> navbar}}
+<style>
+  body {
+    background: white;
+  }
+</style>
+<div class="cuenta container">
+<h1 class="text-center text-decoration-underline mt-5">Mi perfil</h1>
+  <div class="row">
 
-<h1>Bienvenido</h1>
-{{#Usuarios}}
-    <h2>{{nombre}}</h2>
-    <h3>Datos personales</h3>
-{{/Usuarios}}
-<a href="/logout">logout</a>
+		{{!-- Sección de datos personales --}}
+    <div class="col-12 col-lg-6 p-5">
+			<div class="d-flex justify-content-between mt-5">
+				<h2 class="fs-4">Datos personales</h2>
+				<a class="link-dark" href="/editar-perfil">Editar</a>
+			</div>      
+			<div
+        class="datos-personales  py-4"
+      >
+        {{#Usuarios}}
+          <h3 class="fs-5 pb-4"><b>Usuario</b>: {{nombre}} {{apellido}}</h3>
+          <h3 class="fs-5 pb-4"><b>Correo</b>: {{email}}</h3>
+					<a class="link-dark fs-5" href="/logout">Desconectarse</a>
+        {{/Usuarios}}
+      </div>
+    </div>
+		{{!-- Fin de sección de datos personales --}}
 
-{{>footer}}
+		{{!-- Sección de campras realizadas --}}
+    <div class="col-12 col-lg-6 p-5 mt-5 mt-lg-0">
+      <h2 class="mt-5 fs-4 text-center">Compras realizadas</h2>
+      <div
+        class="compras-realizadas text-center py-4"
+      >
+        {{!-- Esto aparece cuando no hay productos comprados, ni idea sino, preguntar a la patrona --}}
+        <div class="sin-compras">
+          {{!-- Ícono --}}
+          <iconify-icon
+            icon="el:shopping-cart"
+            style="color: rgb(127, 127, 127);"
+            width="60"
+          ></iconify-icon>
+          <br />
+          {{!-- Link hacia productos --}}
+          <a href="/productos" class="btn btn-primary my-3">Ir a la tienda</a>
+        </div>
+				
+				{{!-- Sección de compras realizadas con un producto --}}
+				<div class="compras-finalizadas p-3">
+
+          {{!-- Nombre de la compra --}}
+					<h3 class="fs-5 text-start">Bandeja gomitas 5 divisiones</h3>
+					{{!-- Precio de la compra --}}
+          <p class="fs-5 text-start">$1250</p>
+					<div class="d-flex justify-content-between">
+						<span>Finalizado</span>
+            
+            {{!-- Botón modal --}}
+						<a class="link-dark" href="" data-bs-toggle="modal" data-bs-target="#exampleModal">ver detalles</a>
+					</div>
+				</div>
+
+        {{!-- Modal --}}
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              {{!-- Header del modal --}}
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Compras realizadas</h1>
+              </div>
+              {{!-- Contenido principal del modal --}}
+              <div class="modal-body text-start">
+                <div class="d-flex align-items-center">
+                  <div class="flex-shrink-0">
+                    <img src="img/productos/44.jpg" width="150" alt="">
+                  </div>
+                  <div class="flex-grow-1 ms-3">
+                    <h2 class="fs-5">Bandeja gomitas 5 divisiones</h2>
+                    <div class="d-flex">
+                      <span class="fw-bold">Cantidad adquirida:</span>
+                      <p class="cantidad-comprada">-5</p>
+                    </div>
+                    <div class="d-flex">
+                      <span class="fw-bold">Precio: accesible por la patrona</span>
+                    </div>
+                  </div>
+                </div>
+                {{!-- Fin del contenido principal del modal --}}
+                <hr>
+                {{!-- Subtotal, costo de envío y total--}}
+                {{!-- Costo subtotal --}}
+                <div class="d-flex justify-content-between">
+                  <h2 class="fs-5">Subtotal: </h2>
+                  <h2 class="fs-5">$3000</h2>
+                </div>
+
+                {{!-- Costo de envío --}}
+                <div class="d-flex justify-content-between">
+                  <h2 class="fs-5">Costo de envío</h2>
+                  <h2 class="fs-5">$3000</h2>
+                </div>
+
+                {{!-- Costo total --}}
+                <div class="d-flex justify-content-between">
+                  <h4 class="fs-4 fw-bold">Total:</h4>
+                  <p class="fs-5 fw-bold">$6000</p>
+                </div>
+                {{!-- Fin del subtotal, costo de envía y total--}}
+              
+              </div>
+              {{!-- Fin del contenido del modal --}}
+              
+              {{!-- Footer del modal --}}
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        {{!-- Fin del modal --}}
+				{{!-- Fin de la sección de compras realizadas con un producto --}}
+      
+			</div>
+    </div>
+		{{!-- Fin de sección de compras realizadas --}}
+
+  </div>
+</div>
+{{> footer}}

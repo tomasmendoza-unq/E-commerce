@@ -1,132 +1,134 @@
 <head>
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css"
-        integrity="sha512-vKMx8UnXk60zUwyUnUPM3HbQo8QfmNx7+ltw8Pm5zLusl1XIfwcxo8DbWCqMGKaWeNxWA8yrx5v3SaVpMvR3CA=="
-        crossorigin="anonymous" />
+  <link 
+    rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css"
+    integrity="sha512-vKMx8UnXk60zUwyUnUPM3HbQo8QfmNx7+ltw8Pm5zLusl1XIfwcxo8DbWCqMGKaWeNxWA8yrx5v3SaVpMvR3CA=="
+    crossorigin="anonymous" 
+  />
 </head>
 
 {{> navbar}}
 
-    <div class="my-5 text-center" style="color: #ff98a9">
-      <h1>Productos</h1>
-    </div>
-    <!--
-      Contenido total
-    -->
-    <div class="container mx-md-1 mx-lg-3 mb-3">
-      <div class="row">
-        <!-- 
-          Sidebar 
-        -->
-        <div
-          class="col-3 col-xl-2 rounded d-none d-lg-block"
-          style="background-color: rgb(255, 184, 184)"
-        >
-          <div class="align-items-start px-0 pt-2 text-dark">
-              <span class="fs-3">Categorías</span>
-            <hr />
-            <ul class="nav nav-pills mx-auto mb-auto align-items-start">
-              <li class="mb-3 w-100">
-                <ul class="nav ms-2 flex-column">
-                  <li>
-                    <a href="/categoria/Chocolate" class="nav-link link-dark px-0 fs-6"
-                      >Chocolate</a
-                    >
-                  </li>
-                  <li>
-                    <a href="/categoria/Gomitas" class="nav-link link-dark px-0 fs-6"
-                      >Gomitas</a
-                    >
-                  </li>
-                  <li>
-                    <a href="/categoria/Bombones" class="nav-link link-dark px-0 fs-6"
-                      >Bombones</a
-                    >
-                  </li>
-                  <li>
-                    <a href="/categoria/Caramelos" class="nav-link link-dark px-0 fs-6"
-                      >Caramelos</a
-                    >
-                  </li>
-                  <li>
-                    <a href="/categoria/Pastillitas" class="nav-link link-dark px-0 fs-6"
-                      >Pastillitas</a
-                    >
-                  </li>
-                  <li>
-                    <a href="/categoria/Malvadiscos" class="nav-link link-dark px-0 fs-6"
-                      >Malvadiscos</a>
-                  </li>
-                </ul>
+<div class="my-5 text-center" style="color: #ff98a9">
+  <h1>Productos</h1>
+</div>
+
+{{!-- Contenido principal --}}
+<div class="container mx-md-1 mx-lg-3 mb-3">
+  <div class="row">
+    
+    {{!-- Sidebar --}}
+    <div
+      class="col-3 col-xl-2 rounded d-none d-lg-block"
+      style="background-color: rgb(243, 169, 169)"
+    >
+      <div class="align-items-start px-0 pt-2 text-dark">
+        
+        {{!-- Categorias de productos --}}
+        <span class="fs-3">Categorías</span>
+        <hr />
+        <ul class="nav nav-pills mx-auto mb-auto align-items-start">
+          <li class="mb-3 w-100">
+            <ul class="nav ms-2 flex-column">
+              <li>
+                <a href="/categoria/Chocolate" class="nav-link link-dark px-0 fs-6"
+                  >Chocolate</a
+                >
+              </li>
+              <li>
+                <a href="/categoria/Gomitas" class="nav-link link-dark px-0 fs-6"
+                  >Gomitas</a
+                >
+              </li>
+              <li>
+                <a href="/categoria/Bombones" class="nav-link link-dark px-0 fs-6"
+                  >Bombones</a
+                >
+              </li>
+              <li>
+                <a href="/categoria/Caramelos" class="nav-link link-dark px-0 fs-6"
+                  >Caramelos</a
+                >
+              </li>
+              <li>
+                <a href="/categoria/Pastillitas" class="nav-link link-dark px-0 fs-6"
+                  >Pastillitas</a
+                >
+              </li>
+              <li>
+                <a href="/categoria/Malvadiscos" class="nav-link link-dark px-0 fs-6"
+                  >Malvadiscos</a>
               </li>
             </ul>
-          </div>
-        </div>
-
-        <!--
-          Contenido
-        -->
-
-        <div class="col">
-          <div class="container">
-            <div class="producto-conjunto row ms-4">
-              {{#each producto }}
-              <div class="producto-muestra col-12 col-md-6 col-xl-4 mb-5">
-                <div
-                  class="card p-3"
-                  style="
-                    width: 18rem;
-                    background-color: rgb(255, 210, 210);
-                    border-radius: 22px;
-                  "
-                >
-                  <img
-                    src="/{{imagen}}"
-                    class="card-img-top imagen"
-                    alt="..."
-                  />
-                  <div class="card-body">
-                    <h5 class="card-title text-dark text-center nombre">
-                      {{nombre}}
-                    </h5>
-                    <p class="text-dark text-center precio">${{precio}}</p>
-                    <a href="/compra/{{id_producto}}"  class="btn btn-success me-5 detalle">Detalles</a>
-                    <button class="btn btn-success rounded-circle ms-5 addToCart" data-id="{{id_producto}}">
-                      +
-                    </button>
-                  </div>
-                </div>
-              </div>
-              {{/each}}
-            </div>
-          </div>
-        </div>
+          </li>
+        </ul>
+        {{!-- Fin de las categorías para productos --}}
       </div>
     </div>
+    {{!-- Fin de la sidebar --}}
 
-    <nav aria-label="Page navigation example">
-      <ul class="pagination justify-content-center">
-        <li class="page-item" ><a class="page-link" href="/productos/6&12">1</a></li>
-        <li class="page-item" ><a class="page-link" href="/productos/12&18">2</a></li>
-        <li class="page-item" ><a class="page-link" href="/productos/18&24">3</a></li>
-      </ul>
-    </nav>
+    {{!-- Cards de productos --}}
+    <div class="col">
+        <div class="producto-conjunto row ms-4">
+
+          {{!-- Podrías comentar desde acá hasta el otro each 👉👈 --}}
+          {{#each producto }}
+          <div class="producto-muestra col-12 col-md-6 col-xl-4 mb-5">
+            <div
+              class="card p-3"
+              style="
+                width: 18rem;
+                background-color: rgb(243, 169, 169);
+                border-radius: 22px;
+              "
+            >
+              <img
+                src="/{{imagen}}"
+                class="card-img-top imagen"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title text-dark text-center nombre">
+                  {{nombre}}
+                </h5>
+                <p class="text-dark text-center precio">${{precio}}</p>
+                <a href="/compra/{{id_producto}}"  class="btn btn-success me-5 detalle">Detalles</a>
+                <button class="btn btn-success rounded-circle ms-5 addToCart" data-id="{{id_producto}}">
+                  +
+                </button>
+              </div>
+            </div>
+          </div>
+          {{/each}}
+        </div>
+    </div>
+    {{!-- Fin de las cards de productos --}}
+
+  </div>
+</div>
+
+{{!-- Paginación para los productos --}}
+<nav aria-label="Page navigation example">
+  <ul class="pagination justify-content-center">
+    <li class="page-item" ><a class="page-link" href="/productos/6&12">1</a></li>
+    <li class="page-item" ><a class="page-link" href="/productos/12&18">2</a></li>
+    <li class="page-item" ><a class="page-link" href="/productos/18&24">3</a></li>
+  </ul>
+</nav>
+{{!-- Fin de la paginación de los productos --}}
 
 {{> footer}}
-    <!-- Scripts -->
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
-      crossorigin="anonymous"
-    ></script>
-    {{!-- iconos --}}
-    <script src="https://code.iconify.design/iconify-icon/1.0.0/iconify-icon.min.js"></script>
-    <!-- jquery -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
-    <!-- Toast js Library -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"
-        integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw=="
-        crossorigin="anonymous"></script>
+{{!-- Scripts --}}
 
-    <script src="/scripts/productos.js"></script>
+{{!-- jquery --}}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
+{{!-- Toast js Library --}}
+<script 
+  src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"
+  integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw=="
+  crossorigin="anonymous"
+></script>
+
+<script src="/scripts/productos.js"></script>

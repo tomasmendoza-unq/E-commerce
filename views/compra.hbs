@@ -1,108 +1,119 @@
 <head>
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css"
-        integrity="sha512-vKMx8UnXk60zUwyUnUPM3HbQo8QfmNx7+ltw8Pm5zLusl1XIfwcxo8DbWCqMGKaWeNxWA8yrx5v3SaVpMvR3CA=="
-        crossorigin="anonymous" />
+  <link 
+    rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css"
+    integrity="sha512-vKMx8UnXk60zUwyUnUPM3HbQo8QfmNx7+ltw8Pm5zLusl1XIfwcxo8DbWCqMGKaWeNxWA8yrx5v3SaVpMvR3CA=="
+    crossorigin="anonymous" 
+  />
 </head>
-
-
-
 {{> navbar}}
 
-    <div class="compra">
-      <div class="container">
-        {{#product}}
-        <h1>{{nombre}}</h1>
+{{!-- Sección principal de compra de un producto --}}
+<div class="compra">
+  <div class="container">
+    {{#product}}
+    <h1>{{nombre}}</h1>
 
-        <p class="fs-1 price">${{precio}}</p>
-        <div class="row">
-          <div class="d-lg-block col-lg-8 col-md-12">
-            <img
-              src="/{{imagen}}"
-              class="producto-principal img-fluid"
-            />
+    {{!-- AAAAAAComentarias todo esto pofavo Tomy 👉👈 --}}
+    <p class="fs-1 price">${{precio}}</p>
+    <div class="row">
+      <div class="d-lg-block col-lg-8 col-md-12">
+        <img
+          src="/{{imagen}}"
+          class="producto-principal img-fluid"
+        />
         {{/product}}
-
-            <div class="slider d-lg-block mt-5">
-              <div class="row">
-                {{#each relacionado}}
-                <div class="col-6 col-sm-3">
-                  <a href="/compra/{{id_producto}}">
-                    <div class="card">
-                      <img
-                        src="/{{imagen}}"
-                        class="card-img-top"
-                        alt="..."
-                      />
-                    </div>
-                  </a>
-                </div>
-                {{/each}}
-              </div>
-            </div>
-          </div>
-        {{#product}}
-
-          <div class="opciones-compra col-lg-4 col-md-12 pt-0 pt-sm-5 ps-0 ps-sm-5">
-            <h2 class="text-center px-0">Detalles</h2>
-            <div class="row check">
-              <div class="form-check mt-4 col-6 col-lg-12">
-                {{detalles}}
-            </div>
-            <div class="d-flex ps-4 ps-sm-0">
-              <div class="cantidad p-0">
-                <div class="aumentar" style="background: #ff98a9">
-                  <button
-                    type="button"
-                    class="btn btn-danger btn-number d-inline decrementar"
-                    style="background: #ff98a9"
-                  >
-                    -
-                  </button>
-                  <input
-                    type="text"
-                    class="d-inline valor"
-                    value="1"
-                    style="background: #ff98a9"
+        <div class="slider d-lg-block mt-5">
+          <div class="row">
+            {{#each relacionado}}
+            <div class="col-6 col-sm-3">
+              <a href="/compra/{{id_producto}}">
+                <div class="card">
+                  <img
+                    src="/{{imagen}}"
+                    class="card-img-top"
+                    alt="..."
                   />
-                  <button
-                    type="button"
-                    class="btn btn-success d-inline aumento"
-                    style="background: #ff98a9"
-                    data-id="{{id_producto}}"
-                  >
-                    +
-                  </button>
                 </div>
-              </div>
-              <div class="boton ps-4 pb-md-5 ps-sm-0">
-                <button type="button" class="btn btn-primary addToCart" data-id="{{id_producto}}">
-                  Agregar al carrito
-                </button>
-              </div>
+              </a>
             </div>
+            {{/each}}
           </div>
         </div>
       </div>
+      {{#product}}
+
+      {{!-- Opciones de compra --}}
+      <div class="opciones-compra col-lg-4 col-md-12 pt-0 pt-sm-5 ps-0 ps-sm-5">
+        <h2 class="text-center px-0">Detalles</h2>
+        <div class="row check">
+          {{!-- Sección de detalles de la compra --}}
+          <div class="form-check mt-4 col-6 col-lg-12">
+            {{detalles}}
+          </div>
+          {{!-- Sección de detalles de la compra --}}
+
+          {{!-- Sección para sumar o restar productos o agregar al carrito --}}
+          <div class="d-flex ps-4 ps-sm-0">
+            
+            {{!-- Botón para aumentar o disminuir cantidad --}}
+            <div class="cantidad p-0">
+              <div class="aumentar" style="background: #ff98a9">
+                <button
+                  type="button"
+                  class="btn btn-danger btn-number d-inline decrementar"
+                  style="background: #ff98a9"
+                >
+                  -
+                </button>
+                <input
+                  type="text"
+                  class="d-inline valor"
+                  value="1"
+                  style="background: #ff98a9"
+                />
+                <button
+                  type="button"
+                  class="btn btn-success d-inline aumento"
+                  style="background: #ff98a9"
+                  data-id="{{id_producto}}"
+                >
+                  +
+                </button>
+              </div>
+            </div>
+            {{!-- Fin del botón para aumentar o disminuir --}}
+            
+            {{!-- Botón para agregar al carrito --}}
+            <div class="boton ps-4 pb-md-5 ps-sm-0">
+              <button type="button" class="btn btn-primary addToCart" data-id="{{id_producto}}">
+                Agregar al carrito
+              </button>
+            </div>
+            {{!-- Fin del botón para agregar al carrito --}}
+          </div>
+          {{!-- Fin de sección para sumar o restar productos o agregar al carrito --}}
+        </div>
+      </div>
+      {{!-- Fin de opciones de compra --}}
+
     </div>
-    {{/product}}
+  </div>
+</div>
+{{/product}}
 
 {{> footer}}
 
-<!-- Scripts -->
-<script
-  src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
-  integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
-  crossorigin="anonymous"
-></script>
-
-<script src="https://code.iconify.design/iconify-icon/1.0.0/iconify-icon.min.js"></script>
+{{!-- Scripts --}}
 
 <script src="/scripts/compra.js"></script>
 
-    <!-- jquery -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+{{!-- jquery --}}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
-    <!-- Toast js Library -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"
-        integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw=="
-        crossorigin="anonymous"></script>
+{{!-- Toast js Library --}}
+<script 
+  src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"
+  integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw=="
+  crossorigin="anonymous"
+></script>

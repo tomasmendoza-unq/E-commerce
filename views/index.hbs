@@ -1,181 +1,95 @@
-<!--
-Carrusel
--->
 {{> navbar}}
-    <div class="container">
-      <div
-        id="carouselExampleControls"
-        class="carousel slide"
-        data-bs-ride="carousel"
-      >
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img
-              src="img/productos/17abf436-32b2-4ce8-9970-3cade98e06e9.jpg"
-              class="d-block w-100"
-              alt="..."
-            />
-          </div>
-          <div class="carousel-item">
-            <img
-              src="img/productos/274282204_4814242625340480_127006461799274787_n.jpg"
-              class="d-block w-100"
-              alt="..."
-            />
-          </div>
-          <div class="carousel-item">
-            <img
-              src="img/productos/b68e77d8-5d3b-4197-a8a1-5d66407b86f0.jpg"
-              class="d-block w-100"
-              alt="..."
-            />
-          </div>
-        </div>
-        <button
-          class="carousel-control-prev"
-          type="button"
-          data-bs-target="#carouselExampleControls"
-          data-bs-slide="prev"
-        >
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button
-          class="carousel-control-next"
-          type="button"
-          data-bs-target="#carouselExampleControls"
-          data-bs-slide="next"
-        >
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
+{{!-- Carrusel --}}
+<div class="container">
+  <div
+    id="carouselExampleControls"
+    class="carousel slide"
+    data-bs-ride="carousel"
+  >
+    <div class="carousel-inner">
+      {{!-- Imagen del carrusel --}}
+      <div class="carousel-item active">
+        <img
+          src="img/productos/17abf436-32b2-4ce8-9970-3cade98e06e9.jpg"
+          class="d-block w-100"
+          alt="..."
+        />
+      </div>
+
+      {{!-- Imagen del carrusel --}}
+      <div class="carousel-item">
+        <img
+          src="img/productos/274282204_4814242625340480_127006461799274787_n.jpg"
+          class="d-block w-100"
+          alt="..."
+        />
+      </div>
+      {{!-- Imagen del carrusel --}}
+      <div class="carousel-item">
+        <img
+          src="img/productos/b68e77d8-5d3b-4197-a8a1-5d66407b86f0.jpg"
+          class="d-block w-100"
+          alt="..."
+        />
       </div>
     </div>
 
-    <!--
-      Productos destacados
-    -->
-    
-    <div class="tarjeta">
-      <div class="container">
-        <h2>Productos descatados</h2>
-        <div class="row">
-          {{#producto}}
-          <div class="col-12 mb-5 col-md-6 col-lg-4">
-            <a href="/compra">
-              <div class="card">
-                <img
-                  src="{{imagen}}"
-                  class="card-img-top"
-                  alt="..."
-                />
-                <img
-                  src="img/assets/melody.png"
-                  alt="melody"
-                  class="sanrio"
-                />
-              </div>
-            </a>
-          </div>
-          {{/producto}}
-{{!-- 
-          <div class="col-12 mb-5 col-md-6 col-lg-4">
-            <a href="/compra">
-              <div class="card">
-                <img
-                  src="img/productos/44.jpg"
-                  class="card-img-top"
-                  alt="..."
-                />
-                <img
-                  src="img/assets/kitty.png"
-                  alt="Kitty"
-                  class="sanrio"
-                />
-              </div>
-            </a>
-          </div>
-          <div class="col-12 mb-5 col-md-6 col-lg-4">
-            <a href="/compra">
-              <div class="card">
-                <img
-                  src="img/productos/bdfe468028dd39f4e38f3d5784cae42d.jpg"
-                  class="card-img-top"
-                  alt="..."
-                />
-                <img
-                  src="img/assets/kuromi.png"
-                  alt="Kuromi"
-                  class="sanrio"
-                />
-              </div>
-            </a>
-          </div>
-          <div class="col-12 mb-5 col-md-6 col-lg-4">
-            <a href="/compra">
-              <div class="card">
-                <img
-                  src="img/productos/c3abb2025c65e8bf5359fea950e6a284.jpg"
-                  class="card-img-top"
-                  alt="..."
-                />
-                <img
-                  src="img/assets/kero.png"
-                  alt="Kero"
-                  class="sanrio"
-                />
-              </div>
-            </a>
-          </div>
-          <div class="col-12 mb-5 col-md-6 col-lg-4">
-            <a href="/compra">
-              <div class="card">
-                <img
-                  src="img/productos/12383fce5eadb7aa759c322bc42e9289.jpg"
-                  class="card-img-top"
-                  alt="..."
-                />
-                <img
-                  src="img/assets/pompom.png"
-                  alt="pompom"
-                  class="sanrio"
-                />
-              </div>
-            </a>
-          </div>
-          <div class="col-12 mb-5 col-md-6 col-lg-4">
-            <a href="/compra">
-              <div class="card">
-                <img
-                  src="img/productos/274282204_4814242625340480_127006461799274787_n.jpg"
-                  class="card-img-top"
-                  alt="..."
-                />
-                <img
-                  src="img/assets/maru.png"
-                  alt="maru"
-                  class="sanrio"
-                />
-              </div>
-            </a>
-          </div> --}}
-        </div>
-      </div>
-    </div>
+    {{!-- Botón para retroceder el carrusel --}}
+    <button
+      class="carousel-control-prev"
+      type="button"
+      data-bs-target="#carouselExampleControls"
+      data-bs-slide="prev"
+    >
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
 
+    {{!-- Botón para avanzar el carrusel --}}
+    <button
+      class="carousel-control-next"
+      type="button"
+      data-bs-target="#carouselExampleControls"
+      data-bs-slide="next"
+    >
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+</div>
+{{!-- Fin del carrusel --}}
+
+{{!-- Productos destacados --}}
+<div class="tarjeta">
+  <div class="container">
+    <h2>Productos descatados</h2>
+    <div class="row">
+      {{#producto}}
+      <div class="col-12 mb-5 col-md-6 col-lg-4">
+        <a href="/compra">
+          <div class="card">
+            <img
+              src="{{imagen}}"
+              class="card-img-top"
+              alt="..."
+            />
+            <img
+              src="img/assets/melody.png"
+              alt="melody"
+              class="sanrio"
+            />
+          </div>
+        </a>
+      </div>
+      {{/producto}}
+    </div>
+  </div>
+</div>
+
+{{!-- Fin de productos destacados --}}
 
 {{> footer}}
 
-    <!--
-      Scripts
-    -->
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
-      crossorigin="anonymous"
-    ></script>
-    
-    <script src="https://code.iconify.design/iconify-icon/1.0.0/iconify-icon.min.js"></script>
-            
-    <script src="scripts/productos.js"></script>
+{{!-- Scripts --}}
 
+<script src="scripts/productos.js"></script>

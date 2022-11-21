@@ -1,119 +1,154 @@
 {{> navbar}}
-    <section>
-      <!-- Form -->
-      <div class="container register my-5">
-        <form action="/register" method="post" class="p-5 w-100">
-            <h1 class="text-capitalize text-light">Registro</h1>
-            <div class="row">
-              <div class="col-lg-6">
-                <div class="input-group mb-3">
-                  <span
-                    class="input-group-text"
-                    id="basic-addon1"
-                    style="background-color: #ff98a9"
-                  >
-                  <iconify-icon
-                    icon="bx:user-circle"
-                  ></iconify-icon>
-                  </span>
-                  <input
-                    type="text"
-                    name="nombre"
-                    class="form-control"
-                    placeholder="Nombre"
-                    aria-label="Username"
-                    aria-describedby="basic-addon1"
-                  />
-                </div>
-                <div class="input-group mb-3">
-                  <span
-                    class="input-group-text"
-                    id="basic-addon1"
-                    style="background-color: #ff98a9"
-                  >
-                    <iconify-icon
-                      icon="bx:user-circle"
-                    ></iconify-icon>
-                  </span>
-                  <input
-                    type="text"
-                    name="apellido"
-                    class="form-control"
-                    placeholder="Apellido"
-                    aria-label="Username"
-                    aria-describedby="basic-addon1"
-                  />
-                </div>
-              </div>
-              <div class="col-lg-6">
-                <div class="input-group mb-3">
-                  <span
-                    class="input-group-text"
-                    id="basic-addon1"
-                    style="background-color: #ff98a9"
-                  >
-                  <iconify-icon
-                    icon="nimbus:mail"
-                  ></iconify-icon>
-                  </span>
-                  <input
-                    type="email"
-                    name="email"
-                    class="form-control"
-                    placeholder="Email"
-                    aria-label="Password"
-                    aria-describedby="basic-addon1"
-                  />
-                </div>
-                <div class="input-group mb-3">
-                  <span
-                    class="input-group-text"
-                    id="basic-addon1"
-                    style="background-color: #ff98a9"
-                  >
-                  <iconify-icon
-                    icon="nimbus:lock"
-                  ></iconify-icon>
-                  </span>
-                  <input
-                    type="password"
-                    name="contraseña"
-                    class="form-control"
-                    placeholder="Contraseña"
-                    aria-label="Password"
-                    aria-describedby="basic-addon1"
-                  />
-                </div>
-              </div>
-            </div>
-            <button type="submit" class="btn btn-primary w-100 mt-3">
-              Registrate
-            </button>
-            <center class="mt-5">
-              <br />
-            {{# if logg}}
-              <div class="alert alert-success" role="alert">
-                Usuario Creado
-              </div>
-            {{/if}}
-              <br>
-              <a href="/login" class="link-dark">
-                ¿ya tienes una cuenta? Logeate
-              </a>
-              <br />
-              <a href="/" class="link-dark">
-                Volver al menú principal
-              </a>
-            </center>
-          <img
-            src="img/assets/mymelo-login.png"
-            alt="mymelody"
-            class="d-none d-lg-inline-block"
-          />
-        </form>
+<section>
+  {{!-- Formulario para registrarse --}}
+  <div class="container register my-5">
+    <form action="/register" method="post" class="p-5 w-100">
+      <h1 class="text-capitalize text-light">Registro</h1>
+      
+      {{!-- Campos para llenar el formulario --}}
+      <div class="row">
+        
+        {{!-- Campos nombre y apellido--}}
+        <div class="col-lg-6">
+          <div class="input-group mb-3">
+            {{!-- Ícono --}}
+            <span
+              class="input-group-text"
+              id="basic-addon1"
+              style="background-color: #ff98a9"
+            >
+              <iconify-icon
+                icon="bx:user-circle"
+              ></iconify-icon>
+            </span>
+
+            {{!-- Campo para ingresar el nombre --}}
+            <input
+              type="text"
+              name="nombre"
+              class="form-control"
+              placeholder="Nombre"
+              aria-label="Username"
+              aria-describedby="basic-addon1"
+            />
+          </div>
+          <div class="input-group mb-3">
+            {{!-- Ícono --}}
+            <span
+              class="input-group-text"
+              id="basic-addon1"
+              style="background-color: #ff98a9"
+            >
+              <iconify-icon
+                icon="bx:user-circle"
+              ></iconify-icon>
+            </span>
+
+            {{!-- Campo para ingresar apellido --}}
+            <input
+              type="text"
+              name="apellido"
+              class="form-control"
+              placeholder="Apellido"
+              aria-label="Username"
+              aria-describedby="basic-addon1"
+            />
+          </div>
+        </div>
+        {{!-- Fin de campos para nombre y apellido --}}
+
+        {{!-- Campo email y contraseña --}}
+        <div class="col-lg-6">
+          <div class="input-group mb-3">            
+            {{!-- Ícono --}}
+            <span
+              class="input-group-text"
+              id="basic-addon1"
+              style="background-color: #ff98a9"
+            >
+              <iconify-icon
+                icon="nimbus:mail"
+              ></iconify-icon>
+            </span>
+            {{!-- Campo para ingresar email --}}
+            <input
+              type="email"
+              name="email"
+              class="form-control"
+              placeholder="Email"
+              aria-label="Password"
+              aria-describedby="basic-addon1"
+            />
+          </div>
+          <div class="input-group mb-3">
+            {{!-- Ícono --}}
+            <span
+              class="input-group-text"
+              id="basic-addon1"
+              style="background-color: #ff98a9"
+            >
+              <iconify-icon
+                icon="nimbus:lock"
+              ></iconify-icon>
+            </span>
+            
+            {{!-- Campo para ingresar contraseña --}}
+            <input
+              type="password"
+              name="contraseña"
+              class="form-control"
+              placeholder="Contraseña"
+              aria-label="Password"
+              aria-describedby="basic-addon1"
+            />
+          </div>
+        </div>
+        {{!-- Fin de campos para email y contraseña --}}
+      
       </div>
-    </section>
 
-<script src="scripts/productos.js"></script>
+      {{!-- Botón para registrarse --}}
+      <button type="submit" class="btn btn-primary w-100 mt-3">
+        Registrate
+      </button>
+      {{!-- Fin del botón para registrarse --}}
+      
+      {{!-- Sección de accesos directos --}}
+      <center class="mt-5">
+        <br />
+        {{!-- Si se crea la cuenta, muestra este mensaje --}}
+        {{# if logg}}
+          <div class="alert alert-success" role="alert">
+            Usuario Creado
+          </div>
+        {{/if}}
+        {{!-- Fin del mensaje --}}
+        <br>
+        
+        {{!-- Link para ir al login --}}
+        <a href="/login" class="link-dark">
+          ¿ya tienes una cuenta? Logeate
+        </a>
+        <br />
 
+        {{!-- Link para ir al index --}}
+        <a href="/" class="link-dark">
+          Volver al menú principal
+        </a>
+      </center>
+      {{!-- Fin de la sección de accesos directos --}}
+      
+      {{!-- Imagen de fondo del register --}}
+      <img
+        src="img/assets/mymelo-login.png"
+        alt="mymelody"
+        class="d-none d-lg-inline-block"
+      />
+    </form>
+  </div>
+  {{!-- Fin del formulario --}}
+</section>
 {{> footer}}
+
+{{!-- Scripts --}}
+<script src="scripts/productos.js"></script>

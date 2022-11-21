@@ -1,66 +1,65 @@
 {{>navbar}}
-        <h1>Subida de productos</h1>
-        <div class="container pb-5">
-            <form  action="/files" method="post" enctype="multipart/form-data">
-                <input 
-                    type="text"
-                    class="form-control"
-                    placeholder="Nombre de producto"
-                    aria-label="Dollar amount (with dot and two decimal places)"
-                    aria-describedby="basic-addon1"
-                    name="producto"
-                />
-                <input
-                    type="file"
-                    class="form-control"
-                    placeholder="Nombre de producto"
-                    aria-label="Dollar amount (with dot and two decimal places)"
-                    aria-describedby="basic-addon1"
-                    name="avatar"
-                />
-                <div class="input-group mb-3">
-                    <span class="input-group-text">$</span>
-                    <span class="input-group-text">0.00</span>
-                    <input 
-                        type="number" 
-                        class="form-control" 
-                        name="precio" 
-                        aria-label="Dollar amount (with dot and two decimal places)"
-                    >
-                </div>
-                <textarea 
-                    class="form-control"
-                    placeholder="Detalles del producto"
-                    aria-label="Dollar amount (with dot and two decimal places)"
-                    aria-describedby="basic-addon1"
-                    name="detalles"
-                    minlength="30"
-                    maxlength="250"
-                ></textarea>
-                <select class="form-select d-block w-100" name="categoria"
-                    required="">
-                    <option value="">Elegir...</option>
-                    <option value="Chocolate">Chocolate</option>
-                    <option value="Gomitas">Gomitas</option>
-                    <option value="Bombones">Bombones</option>
-                    <option value="Caramelos">Caramelos</option>
-                    <option value="Pastillas">Pastillas</option>
-                    <option value="Malvadiscos">Malvadiscos</option>
-                </select>
-                <br>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="destacado" id="flexRadioDefault2">
-                    <label class="form-check-label" for="flexRadioDefault2">
-                        ¿Queres que aparezca como producto destacado?
-                    </label>
-                </div>
-                <br>
-                <input 
-                    type="submit" 
-                    value="subir" 
-                    class="form-control"    
-                />
-            </form>
-        </div>
+<h1>Subida de productos</h1>
+<div class="container pb-5">
+	<form  action="/files" method="post" enctype="multipart/form-data">
+		<input 
+			type="text"
+			class="form-control"
+			placeholder="Nombre de producto"
+			aria-label="Dollar amount (with dot and two decimal places)"
+			aria-describedby="basic-addon1"
+			name="producto"
+		/>
+		<input
+			type="file"
+			class="form-control"
+			placeholder="Nombre de producto"
+			aria-label="Dollar amount (with dot and two decimal places)"
+			aria-describedby="basic-addon1"
+			name="avatar"
+		/>
+		<div class="input-group mb-3">
+			<span class="input-group-text">$</span>
+			<span class="input-group-text">0.00</span>
+			<input 
+					type="number" 
+					class="form-control" 
+					name="precio" 
+					aria-label="Dollar amount (with dot and two decimal places)"
+			>
+		</div>
+		<textarea 
+			class="form-control"
+			placeholder="Detalles del producto"
+			aria-label="Dollar amount (with dot and two decimal places)"
+			aria-describedby="basic-addon1"
+			name="detalles"
+			minlength="30"
+			maxlength="250"
+		></textarea>
+		<select class="form-select d-block w-100" name="categoria"
+			required="">
+			<option value="">Elegir...</option>
+			<option value="Chocolate">Chocolate</option>
+			<option value="Gomitas">Gomitas</option>
+			<option value="Bombones">Bombones</option>
+			<option value="Caramelos">Caramelos</option>
+			<option value="Pastillas">Pastillas</option>
+			<option value="Malvadiscos">Malvadiscos</option>
+		</select>
+		<br>
+		<div class="form-check">
+			<input class="form-check-input" type="radio" name="destacado" id="flexRadioDefault2">
+			<label class="form-check-label" for="flexRadioDefault2">
+					¿Queres que aparezca como producto destacado?
+			</label>
+		</div>
+		<br>
+		<input 
+			type="submit" 
+			value="subir" 
+			class="form-control"    
+		/>
+	</form>
+</div>
 {{> footer}}
-

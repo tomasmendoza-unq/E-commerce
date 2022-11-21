@@ -213,6 +213,7 @@ button:hover {
 
 .producto .card {
   width: 16rem;
+  background-color: #F27474;
 }
 
 /* Mi carrito -------------*/
@@ -365,12 +366,39 @@ section .register form img {
 
 }
 
+/* Perfil */
+
+.cuenta { margin-bottom: 20%; }
+
+.cuenta h1,
+.cuenta h2 {
+  color: #fc6fa3;
+}
+
+.cuenta .compras-realizadas,
+.cuenta .datos-personales {
+  border-top: 2px #fc6fa3 solid;
+  border-bottom: 2px #fc6fa3 solid;
+}
+
+.cuenta .compras-finalizadas {
+  padding: 5px;
+  border-radius: 10px;
+  border: 2px #fc6fa3 solid;
+}
+
 /* Media queries */
+
+@media (max-width: 1305px) {
+  .barra-busqueda {
+    width: 400px;
+    margin-left: 30px;
+  }
+}
 
 @media (min-width: 992px) and (max-width: 1149px) {
   .barra-busqueda {
     width: 300px;
-    margin-left: 30px;
   }
 
   .nav {
@@ -412,17 +440,14 @@ section .register form img {
     margin-top: 20px;
     width: 100%;
   }
+  
   .carousel {
-    width: 650px;
+    max-width: 650px;
   }
 
   .tarjeta {
     padding-left: 30px;
   }
-
-  /* section .register:not(form .register) {
-    height: 570px;
-  } */
 
   .slider .card {
     width: 10rem;
@@ -452,12 +477,23 @@ section .register form img {
 
 }
 
-@media (max-width: 425px) {
+@media (max-width: 767px) {
+  .carousel {
+    width: 450px;
+  }
+
+  .carousel-item img {
+    height: 22rem;
+  }
+  
   section .register:not(form .register) {
     width: 350px;
     padding: 0;
     font-size: 14px;
   }
+}
+
+@media (max-width: 425px) {
 
   .carousel {
     width: 350px;

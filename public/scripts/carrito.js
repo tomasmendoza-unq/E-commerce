@@ -48,9 +48,9 @@ if(localStorage.carrito){
                       <div
                         class="cantidad valor col-lg-1 col-md-4 col-3 order-lg-2 order-3 mx-5"
                       >
-                        <p>cantidad</p>
+                        <p>Cantidad</p>
                         <div class="aumentar d-flex content-justify-center">
-                          <input type="text"value="${item.cantidad}" />
+                          <input type="text" value="${item.cantidad}" />
                         </div>
                       </div>
                       <div
