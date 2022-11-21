@@ -1,9 +1,20 @@
 {{> navbar}}
+<style>
+  body {
+    background: white;
+  }
+
+  .form-control {
+    border: 2.5px pink solid;
+  }
+</style>
 <div class="cuenta container p-5">
   <h1 class="text-center text-decoration-underline">Mi perfil</h1>
   {{!-- Formulario para editar datos personales --}}
-  <form>
+  <form class="editar-perfil">
     <div class="row mt-5">
+
+      {{!-- Campo para cambiar el nombre --}}
       <div class="col-12 col-lg-6">
         <div class="mb-3">
           <label
@@ -17,6 +28,9 @@
           />
         </div>
       </div>
+      {{!-- Fin del campo para cambiar el nombre --}}
+
+      {{!-- Campo para cambiar el apellido --}}
       <div class="col-12 col-lg-6">
         <div class="mb-3">
           <label
@@ -31,16 +45,22 @@
         </div>
       </div>
     </div>
+    {{!-- Fin del campo para cambiar el apellido --}}
+
+    {{!-- Campo para cambiar correo electrónico --}}
     <div class="mb-3">
       <label for="exampleFormControlInput1" class="form-label fw-bold">Correo
         electronico</label>
       <input type="email" class="form-control" id="exampleFormControlInput1" />
     </div>
+    {{!-- Fin del campo para cambiar el correo electrónico --}}
+    
+    {{!-- Campo para cambiar teléfono celular--}}
     <div class="mb-3">
-      <label for="exampleFormControlInput1" class="form-label fw-bold">Correo
-        electronico</label>
+      <label for="exampleFormControlInput1" class="form-label fw-bold">Teléfono (Opcional)</label>
       <input type="email" class="form-control" id="exampleFormControlInput1" />
     </div>
+    {{!-- Fin del campo para cambiar el teléfono celular --}}
 
     {{!-- Formularios para contraseñas --}}
     <h2 class="fs-5 text-decoration-underline my-5">Cambio de contraseña (Dejar en blanco para no cambiar nada)</h2>
@@ -56,21 +76,11 @@
       <label for="inputPassword" class="form-label fw-bold">Confirmar nueva contraseña</label>
       <input type="password" class="form-control" id="inputPassword">
     </div>
+    {{!-- Fin del formulario para contraseñas --}}
 
     {{!-- Botón para enviar datos --}}
     <button type="submit" class="btn btn-primary mb-3">Guardar cambios</button>
   </form>
+  {{!-- Fin del formulario para editar datos personales --}}
 </div>
 {{> footer}}
-
-<!-- Scripts -->
-
-<script
-  src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
-  integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
-  crossorigin="anonymous"
-></script>
-
-<script
-  src="https://code.iconify.design/iconify-icon/1.0.0/iconify-icon.min.js"
-></script>

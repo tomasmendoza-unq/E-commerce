@@ -2,165 +2,193 @@
     class="navbar navbar-expand-lg"
     style="background-color: #ffa9c8; border-bottom: 2px solid white"
 >
-    <div class="container-fluid">
-            <a class="navbar text-light" href="#">
-            <img
-                src="/img/assets/logo.png"
-                alt="mymusic"
-                class="d-inline-block align-content-top logo"
-            />
-            <div class="d-inline-block">
-                <h1 class="titulo">Dulces</h1>
-                <h1 class="titulo">Sanrio</h1>
-            </div>
-            </a>
+	<div class="container-fluid">
+		<a class="navbar text-light" href="#">
+		<img
+			src="/img/assets/logo.png"
+			alt="mymusic"
+			class="d-inline-block align-content-top logo"
+		/>
+		<div class="d-inline-block">
+			<h1 class="titulo">Dulces</h1>
+			<h1 class="titulo">Sanrio</h1>
+		</div>
+		</a>
 
-            <!-- 
-            Barra de busqueda  
-            -->
-            <form class="mx-auto d-none d-sm-flex" role="search">
-            <input
-                class="form-control me-2 barra-busqueda"
-                type="search"
-                placeholder="Buscar producto"
-                aria-label="Search"
-            />
-            </form>
+		{{!-- Barra de busqueda --}}
+		<form class="mx-auto d-none d-sm-flex" role="search">
+			<input
+				class="form-control me-2 barra-busqueda"
+				type="search"
+				placeholder="Buscar producto"
+				aria-label="Search"
+			/>
+		</form>
+		{{!-- Fin de la barra de busqueda --}}
 
-            <!-- 
-            Menú hamburguesa responsive 
-            -->
-            <button
-            class="navbar-toggler"
-            style="background-color: #ff98a9"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-            >
-            <span class="navbar-toggler-icon"></span>
-            </button>
+		{{!-- Menú hamburguesa responsive --}}
+		<button
+			class="navbar-toggler"
+			style="background-color: #ff98a9"
+			type="button"
+			data-bs-toggle="collapse"
+			data-bs-target="#navbarSupportedContent"
+			aria-controls="navbarSupportedContent"
+			aria-expanded="false"
+			aria-label="Toggle navigation"
+		>
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		{{!-- Fin del menú hamburguesa responsive --}}
 
-            <!-- Íconos del nav -->
-            <div
-            class="collapse navbar-collapse justify-content-lg-end"
-            id="navbarSupportedContent"
-            >
-            <ul class="nav">
-                <li class="nav-item">
-                <a href="/ayuda">
-                    <iconify-icon
-                    icon="eva:question-mark-circle-outline"
-                    style="color: white; margin-left: 20px"
-                    width="40"
-                    ></iconify-icon>
-                </a>
-                <a class="nav-link link-light" href="/ayuda">Ayuda</a>
-                </li>
-                <li class="nav-item">
-                {{# if res.locals.userFound}}
-                <a href="/perfil">
-                    <iconify-icon
-                    icon="carbon:user-avatar"
-                    style="color: white; margin-left: 30px"
-                    width="40"
-                    ></iconify-icon>
-                </a>
-                <a class="nav-link link-light" href="/perfil"
-                    >Mi cuenta</a
-                >
-                {{# if res.locals.userAdmin}}
-                <a href="/creador">
-                    <iconify-icon
-                    icon="gridicons:create"
-                    style="color: white; margin-left: 17px"
-                    width="40"
-                    ></iconify-icon>
-                </a>
-                <a class="nav-link link-light" href="/creador"
-                    >Crear</a
-                >
-                {{/if}}
-                {{else }}
-                <a href="/login">
-                    <iconify-icon
-                    icon="carbon:user-avatar"
-                    style="color: white; margin-left: 17px"
-                    width="40"
-                    ></iconify-icon>
-                </a>
-                <a class="nav-link link-light" href="/login"
-                    >Login</a
-                >
-                {{/if}}
+		<div
+			class="collapse navbar-collapse justify-content-lg-end"
+			id="navbarSupportedContent"
+		>
+			{{!-- Íconos y links del nav --}}
+			<ul class="nav">
+				{{!-- Ayuda --}}
+				<li class="nav-item">
+					{{!-- Ícono --}}
+					<a href="/ayuda">
+						<iconify-icon
+							icon="eva:question-mark-circle-outline"
+							style="color: white; margin-left: 20px"
+							width="40"
+						></iconify-icon>
+					</a>
+					{{!-- Link hacía la página de ayuda --}}
+					<a class="nav-link link-light" href="/ayuda">Ayuda</a>
+				</li>
 
-                </li>
-                <li class="nav-item">
-                <a href="/carrito"
-                    ><iconify-icon
-                    icon="bytesize:cart"
-                    style="color: white; margin-left: 17px"
-                    width="40"
-                    ></iconify-icon
-                ></a>
-                <span class="badge rounded-circle carrito-numero">0</span>
-                <a class="nav-link link-light" href="/carrito"
-                    >Carrito</a
-                >
-                </li>
-            </ul>
-            <div class="container d-md-none pt-4">
-                <a class="link-light" href="/">Inicio</a>
-                <div class="dropdown my-3">
-                <a
-                    class="nav-link link-light dropdown-toggle"
-                    data-bs-toggle="dropdown"
-                    href="#"
-                    role="button"
-                    aria-expanded="false"
-                    >Productos</a
-                >
-                <ul class="dropdown-menu">
-                    {{#each res.locals.producto}}
-                    <li>
-                    <a class="dropdown-item" href="/productos"
-                        >{{nombre}}</a
-                    >
-                    </li>
-                    {{/each}}
-                </ul>
-                </div>
-                <a class="link-light" href="#">Contacto</a>
-            </div>
-            </div>
-        </div>
-        </nav>
+				{{!-- Login / Creador / Mi cuenta --}}
+				<li class="nav-item">
+					
+					{{!-- Si ya está logueado --}}
+					{{# if res.locals.userFound}}
+					{{!-- Ícono --}}
+					<a href="/perfil">
+						<iconify-icon
+							icon="carbon:user-avatar"
+							style="color: white; margin-left: 30px"
+							width="40"
+						></iconify-icon>
+					</a>
 
-        <!--
-        Línea de navegacion
-        -->
-        <div class="linea">
-        <div class="container d-none d-md-flex justify-content-center">
-            <a class="link-light" href="/">Inicio</a>
-            <div class="dropdown">
-            <a
-                class="nav-link dropdown-toggle"
-                data-bs-toggle="dropdown"
-                href="#"
-                role="button"
-                aria-expanded="false"
-                >Productos</a
-            >
-            <ul class="dropdown-menu">
-            {{#res.locals.producto}}
-                <li>
-                <a class="dropdown-item" href="/productos">{{nombre}}</a>
-                </li>
-            {{/res.locals.producto}}
-            </ul>
-            </div>
-            <a>Contacto</a>
-    </div>
+					{{!-- Link hacia el perfil --}}
+					<a class="nav-link link-light" href="/perfil"
+							>Mi cuenta</a
+					>
+
+					{{!-- Si el usuario es admin tiene acceso a crear productos --}}
+					{{# if res.locals.userAdmin}}
+					{{!-- Íconos --}}
+					<a href="/creador">
+						<iconify-icon
+							icon="gridicons:create"
+							style="color: white; margin-left: 17px"
+							width="40"
+						></iconify-icon>
+					</a>
+					{{!-- Link hacia creador --}}
+					<a class="nav-link link-light" href="/creador"
+						>Crear</a
+					>
+					{{/if}}
+
+					{{!-- Sino es admin y no está logueado --}}
+					{{else }}
+					{{!-- Ícono --}}
+					<a href="/login">
+						<iconify-icon
+							icon="carbon:user-avatar"
+							style="color: white; margin-left: 17px"
+							width="40"
+						></iconify-icon>
+					</a>
+					{{!-- Link hacia el login --}}
+					<a class="nav-link link-light" href="/login"
+						>Login</a
+					>
+					{{/if}}
+				</li>
+
+				{{!-- Carrito --}}
+				<li class="nav-item">
+				{{!-- Ícono --}}
+				<a href="/carrito"
+					><iconify-icon
+						icon="bytesize:cart"
+						style="color: white; margin-left: 17px"
+						width="40"
+					></iconify-icon
+				></a>
+				
+				{{!-- Número de productos en el carrito --}}
+				<span class="badge rounded-circle carrito-numero">0</span>
+				
+				{{!-- Link hacía el carrito --}}
+				<a class="nav-link link-light" href="/carrito"
+					>Carrito</a
+				>
+				</li>
+			</ul>
+			{{!-- Fin de los íconos del nav --}}
+
+			{{!-- Este contenedor aparece por debajo del breakpoint md, muestra lo mismo que en la linea --}}
+			<div class="container d-md-none pt-4 mx-0">
+				{{!-- Link para ir al index --}}
+				<a class="link-light" href="/">Inicio</a>
+
+				{{!-- Dropdown link que lleva a productos --}}
+				<div class="dropdown my-3">
+					<a
+						class="nav-link link-light dropdown-toggle"
+						data-bs-toggle="dropdown"
+						href="#"
+						role="button"
+						aria-expanded="false"
+					>Productos</a>
+					<ul class="dropdown-menu">
+						{{#each res.locals.producto}}
+						<li>
+							<a class="dropdown-item" href="/productos"
+								>{{nombre}}</a
+							>
+						</li>
+						{{/each}}
+					</ul>
+				</div>
+
+				{{!-- Link a contactos --}}
+				<a class="link-light" href="#">Contacto</a>
+			</div>
+			{{!-- Fin del contenedor --}}
+		</div>
+	</div>
+</nav>
+
+{{!-- Línea de navegacion --}}
+<div class="linea">
+	<div class="container d-none d-md-flex justify-content-center">
+		<a class="link-light" href="/">Inicio</a>
+		<div class="dropdown">
+			<a
+				class="nav-link dropdown-toggle"
+				data-bs-toggle="dropdown"
+				href="#"
+				role="button"
+				aria-expanded="false"
+				>Productos</a
+			>
+			<ul class="dropdown-menu">
+				{{#res.locals.producto}}
+					<li>
+						<a class="dropdown-item" href="/productos">{{nombre}}</a>
+					</li>
+				{{/res.locals.producto}}
+			</ul>
+		</div>
+		<a>Contacto</a>
+	</div>
 </div>

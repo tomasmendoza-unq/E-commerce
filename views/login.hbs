@@ -1,84 +1,94 @@
 {{> navbar}}
 
-    <section>
-      <!-- Form -->
-      <div class="container my-5">
-        <form action="/login" method="post" class="p-5 w-100">
-            <h1 class="text-capitalize text-light">Login</h1>
-            <div class="input-group mb-3">
-              <span
-                class="input-group-text"
-                id="basic-addon1"
-                style="background-color: #ff98a9"
-              >
-                <iconify-icon icon="charm:mail"></iconify-icon>
-              </span>
-              <input
-                type="email"
-                name="email"
-                class="form-control"
-                placeholder="Email"
-                aria-label="Username"
-                aria-describedby="basic-addon1"
-              />
-            </div>
-
-            <div class="input-group mb-3">
-              <span
-                class="input-group-text"
-                id="basic-addon1"
-                style="background-color: #ff98a9"
-              >
-                <iconify-icon icon="ant-design:lock-outlined"></iconify-icon>
-              </span>
-              <input
-                type="password"
-                name="contraseña"
-                class="form-control"
-                style="border-radius: 5px"
-                placeholder="Contraseña"
-                aria-label="Password"
-                aria-describedby="basic-addon1"
-              />
-            </div>
-            <button type="submit" class="btn btn-primary w-100 mt-3">
-              Iniciar sesión
-            </button>
-            {{# if loggedin}}
-            <br>
-            <div class="alert alert-danger" role="alert">
-              Usuario o contraseña incorrecta
-            </div>
-            {{/if}}
-            <center class="mt-5">
-              <a href="#" class="link-dark"> ¿Olvidaste tu contraseña? </a>
-              <br />
-              <a href="/register" class="link-dark">
-                ¿No tienes cuenta? Registrate
-              </a>
-              <br />
-              <a href="/" class="link-dark">
-                Volver al menú principal
-              </a>
-            </center>
-          <img
-            src="img/assets/mymelo-login.png"
-            alt="mymelody"
-            class="d-none d-lg-inline-block"
+<section>
+  <div class="container my-5">
+    {{!-- Formulario para ingresar cuenta --}}
+    <form action="/login" method="post" class="p-5 w-100">
+        <h1 class="text-capitalize text-light">Login</h1>
+        
+        {{!-- Campo para ingresar email --}}
+        <div class="input-group mb-3">
+          <span
+            class="input-group-text"
+            id="basic-addon1"
+            style="background-color: #ff98a9"
+          >
+            <iconify-icon icon="charm:mail"></iconify-icon>
+          </span>
+          <input
+            type="email"
+            name="email"
+            class="form-control"
+            placeholder="Email"
+            aria-label="Username"
+            aria-describedby="basic-addon1"
           />
-        </form>
-      </div>
-    </section>
+        </div>
+        {{!-- Fin del campo para ingresar email --}}
+
+        {{!-- Campo para ingresar contraseña --}}
+        <div class="input-group mb-3">
+          <span
+            class="input-group-text"
+            id="basic-addon1"
+            style="background-color: #ff98a9"
+          >
+            <iconify-icon icon="ant-design:lock-outlined"></iconify-icon>
+          </span>
+          <input
+            type="password"
+            name="contraseña"
+            class="form-control"
+            style="border-radius: 5px"
+            placeholder="Contraseña"
+            aria-label="Password"
+            aria-describedby="basic-addon1"
+          />
+        </div>
+        {{!-- Fin del campo para ingresar contraseña --}}
+
+        {{!-- Botón para iniciar seción --}}
+        <button type="submit" class="btn btn-primary w-100 mt-3">
+          Iniciar sesión
+        </button>
+
+        {{!-- Por si el email o la contraseña son incorrectos --}}
+        {{# if loggedin}}
+        <br>
+        <div class="alert alert-danger" role="alert">
+          Usuario o contraseña incorrecta
+        </div>
+        {{/if}}
+        {{!-- Fin de la sección por si son incorrectos --}}
+
+        {{!-- Sección de menues --}}
+        <center class="mt-5">
+          {{!-- Olvidaste tu contraseña --}}
+          <a href="#" class="link-dark"> ¿Olvidaste tu contraseña? </a>
+          <br />
+          {{!-- Para ir a registrarse --}}
+          <a href="/register" class="link-dark">
+            ¿No tienes cuenta? Registrate
+          </a>
+          <br />
+          {{!-- Para volver al menú principal --}}
+          <a href="/" class="link-dark">
+            Volver al menú principal
+          </a>
+        </center>
+      {{!-- Imagen de fondo del login --}}
+      <img
+        src="img/assets/mymelo-login.png"
+        alt="mymelody"
+        class="d-none d-lg-inline-block"
+      />
+    </form>
+    {{!-- Fin del formulario para ingresar cuenta --}}
+  </div>
+</section>
 
 {{> footer}}
 
-    <!-- Scripts -->
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
-      crossorigin="anonymous"
-    ></script>
-    
-    <script src="https://code.iconify.design/iconify-icon/1.0.0/iconify-icon.min.js"></script>
-      
-    <script src="scripts/productos.js"></script>
+{{!-- Scripts --}}
+  
+<script src="scripts/productos.js"></script>
