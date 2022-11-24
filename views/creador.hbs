@@ -1,65 +1,79 @@
+<style>
+	body {background-color: #fff;}
+</style>
+
 {{>navbar}}
-<h1>Subida de productos</h1>
-<div class="container pb-5">
-	<form  action="/files" method="post" enctype="multipart/form-data">
-		<input 
-			type="text"
-			class="form-control"
-			placeholder="Nombre de producto"
-			aria-label="Dollar amount (with dot and two decimal places)"
-			aria-describedby="basic-addon1"
-			name="producto"
-		/>
-		<input
-			type="file"
-			class="form-control"
-			placeholder="Nombre de producto"
-			aria-label="Dollar amount (with dot and two decimal places)"
-			aria-describedby="basic-addon1"
-			name="avatar"
-		/>
-		<div class="input-group mb-3">
-			<span class="input-group-text">$</span>
-			<span class="input-group-text">0.00</span>
-			<input 
-					type="number" 
-					class="form-control" 
-					name="precio" 
-					aria-label="Dollar amount (with dot and two decimal places)"
-			>
-		</div>
-		<textarea 
-			class="form-control"
-			placeholder="Detalles del producto"
-			aria-label="Dollar amount (with dot and two decimal places)"
-			aria-describedby="basic-addon1"
-			name="detalles"
-			minlength="30"
-			maxlength="250"
-		></textarea>
-		<select class="form-select d-block w-100" name="categoria"
-			required="">
-			<option value="">Elegir...</option>
-			<option value="Chocolate">Chocolate</option>
-			<option value="Gomitas">Gomitas</option>
-			<option value="Bombones">Bombones</option>
-			<option value="Caramelos">Caramelos</option>
-			<option value="Pastillas">Pastillas</option>
-			<option value="Malvadiscos">Malvadiscos</option>
-		</select>
-		<br>
-		<div class="form-check">
-			<input class="form-check-input" type="radio" name="destacado" id="flexRadioDefault2">
-			<label class="form-check-label" for="flexRadioDefault2">
-					¿Queres que aparezca como producto destacado?
-			</label>
-		</div>
-		<br>
-		<input 
-			type="submit" 
-			value="subir" 
-			class="form-control"    
-		/>
-	</form>
+<div class="creador">
+  <div class="titulo-creador text-center my-5 mx-5 text-decoration-underline">
+    <h1>Nuevo producto</h1>
+  </div>
+  <div class="container pb-5">
+    <form  action="/files" method="post" enctype="multipart/form-data">
+      
+      {{!-- Input de nombre del producto --}}
+      <span class="fs-5 fw-bold" for="name-producto">Nombre del producto</span>
+      <input 
+        type="text"
+        class="form-control mb-4"
+        id="name-producto"
+        name="producto"
+      />
+
+      {{!-- Input de precio --}}
+      <span class="fs-5 fw-bold">Precio</span>
+      <div class="input-group mb-4">
+        <span class="input-group-text fw-bold">$</span>
+        <span class="input-group-text">0.00</span>
+        <input 
+          type="number" 
+          class="form-control" 
+          name="precio"
+        >
+      </div>
+
+      {{!-- Input de archivo --}}
+      <span class="fs-5 fw-bold">Seleccione una imagen</span>
+      <input
+        type="file"
+        class="form-control mb-4"
+        name="avatar"
+      />
+
+      {{!-- Detalles del producto --}}
+      <span class="fs-5 fw-bold" for="detalles-producto">Detalles del producto</span>
+      <textarea 
+        class="form-control mb-4"
+        name="detalles"
+        id="detalles-producto"
+        minlength="30"
+        maxlength="250"
+      ></textarea>
+
+      {{!-- Categoria del producto --}}
+      <select class="form-select d-block w-100" name="categoria"
+        required="">
+        <option value="">Elegir categoría...</option>
+        <option value="Chocolate">Chocolate</option>
+        <option value="Gomitas">Gomitas</option>
+        <option value="Bombones">Bombones</option>
+        <option value="Caramelos">Caramelos</option>
+        <option value="Pastillas">Pastillas</option>
+        <option value="Malvadiscos">Malvadiscos</option>
+      </select>
+      <br>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="destacado" id="flexRadioDefault2">
+        <label class="form-check-label" for="flexRadioDefault2">
+            ¿Queres que aparezca como producto destacado?
+        </label>
+      </div>
+      <br>
+      <input 
+        type="submit" 
+        value="subir" 
+        class="form-control w-25 mx-auto subir-producto"    
+      />
+    </form>
+  </div>
 </div>
 {{> footer}}
