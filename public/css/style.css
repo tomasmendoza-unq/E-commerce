@@ -387,6 +387,26 @@ section .register form img {
   border: 2px #fc6fa3 solid;
 }
 
+/* Creador de productos */
+
+
+.creador .titulo-creador {
+  color: #EB6767;
+}
+
+.creador .form-control {
+  border-color: pink;
+}
+
+.creador .subir-producto {
+  background-color: #EB6767;
+  color: #fff;
+}
+
+.creador .subir-producto:hover {
+  background-color: #d35b5b;
+}
+
 /* Media queries */
 
 @media (max-width: 1305px) {
