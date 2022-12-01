@@ -1,194 +1,196 @@
 <nav
-    class="navbar navbar-expand-lg"
-    style="background-color: #ffa9c8; border-bottom: 2px solid white"
+  class="navbar navbar-expand-lg"
+  style="background-color: #ffa9c8; border-bottom: 2px solid white"
 >
-	<div class="container-fluid">
-		<a class="navbar text-light" href="#">
-		<img
-			src="/img/assets/logo.png"
-			alt="mymusic"
-			class="d-inline-block align-content-top logo"
-		/>
-		<div class="d-inline-block">
-			<h1 class="titulo">Dulces</h1>
-			<h1 class="titulo">Sanrio</h1>
-		</div>
-		</a>
+  <div class="container-fluid">
+    <a class="navbar text-light" href="#">
+      <img
+        src="/img/assets/logo.png"
+        alt="mymusic"
+        class="d-inline-block align-content-top logo"
+      />
+      <div class="d-inline-block">
+        <h1 class="titulo">Dulces</h1>
+        <h1 class="titulo">Sanrio</h1>
+      </div>
+    </a>
 
-		{{!-- Barra de busqueda --}}
-		<form class="mx-auto d-none d-sm-flex" role="search">
-			<input
-				class="form-control me-2 barra-busqueda"
-				type="search"
-				placeholder="Buscar producto"
-				aria-label="Search"
-			/>
-		</form>
-		{{!-- Fin de la barra de busqueda --}}
+    {{! Barra de busqueda }}
+    <form class="mx-auto d-none d-sm-flex" role="search">
+      <input
+        class="form-control me-2 barra-busqueda"
+        type="search"
+        placeholder="Buscar producto"
+        aria-label="Search"
+        hidden
+      />
+    </form>
+    {{! Fin de la barra de busqueda }}
 
-		{{!-- Menú hamburguesa responsive --}}
-		<button
-			class="navbar-toggler"
-			style="background-color: #ff98a9"
-			type="button"
-			data-bs-toggle="collapse"
-			data-bs-target="#navbarSupportedContent"
-			aria-controls="navbarSupportedContent"
-			aria-expanded="false"
-			aria-label="Toggle navigation"
-		>
-			<span class="navbar-toggler-icon"></span>
-		</button>
-		{{!-- Fin del menú hamburguesa responsive --}}
+    {{! Menú hamburguesa responsive }}
+    <button
+      class="navbar-toggler"
+      style="background-color: #ff98a9"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    {{! Fin del menú hamburguesa responsive }}
 
-		<div
-			class="collapse navbar-collapse justify-content-lg-end"
-			id="navbarSupportedContent"
-		>
-			{{!-- Íconos y links del nav --}}
-			<ul class="nav">
-				{{!-- Ayuda --}}
-				<li class="nav-item">
-					{{!-- Ícono --}}
-					<a href="/ayuda">
-						<iconify-icon
-							icon="eva:question-mark-circle-outline"
-							style="color: white; margin-left: 20px"
-							width="40"
-						></iconify-icon>
-					</a>
-					{{!-- Link hacía la página de ayuda --}}
-					<a class="nav-link link-light" href="/ayuda">Ayuda</a>
-				</li>
+    <div
+      class="collapse navbar-collapse justify-content-lg-end"
+      id="navbarSupportedContent"
+    >
+      {{! Íconos y links del nav }}
+      <ul class="nav">
+        {{! Ayuda }}
+        <li class="nav-item">
+          {{! Ícono }}
+          <a href="/ayuda">
+            <iconify-icon
+              icon="eva:question-mark-circle-outline"
+              style="color: white; margin-left: 20px"
+              width="40"
+            ></iconify-icon>
+          </a>
+          {{! Link hacía la página de ayuda }}
+          <a class="nav-link link-light" href="/ayuda">Ayuda</a>
+        </li>
 
-				{{!-- Login / Creador / Mi cuenta --}}
-				<li class="nav-item">
-					
-					{{!-- Si ya está logueado --}}
-					{{# if res.locals.userFound}}
-					{{!-- Ícono --}}
-					<a href="/perfil">
-						<iconify-icon
-							icon="carbon:user-avatar"
-							style="color: white; margin-left: 30px"
-							width="40"
-						></iconify-icon>
-					</a>
+        {{! Login / Creador / Mi cuenta }}
+        <li class="nav-item">
 
-					{{!-- Link hacia el perfil --}}
-					<a class="nav-link link-light" href="/perfil"
-							>Mi cuenta</a
-					>
+          {{! Si ya está logueado }}
+          {{#if res.locals.userFound}}
+            {{! Ícono }}
+            <a href="/perfil">
+              <iconify-icon
+                icon="carbon:user-avatar"
+                style="color: white; margin-left: 30px"
+                width="40"
+              ></iconify-icon>
+            </a>
 
-					{{!-- Si el usuario es admin tiene acceso a crear productos --}}
-					{{# if res.locals.userAdmin}}
-					{{!-- Íconos --}}
-					<a href="/creador">
-						<iconify-icon
-							icon="gridicons:create"
-							style="color: white; margin-left: 17px"
-							width="40"
-						></iconify-icon>
-					</a>
-					{{!-- Link hacia creador --}}
-					<a class="nav-link link-light" href="/creador"
-						>Crear</a
-					>
-					{{/if}}
+            {{! Link hacia el perfil }}
+            <a class="nav-link link-light" href="/perfil">Mi cuenta</a>
 
-					{{!-- Sino es admin y no está logueado --}}
-					{{else }}
-					{{!-- Ícono --}}
-					<a href="/login">
-						<iconify-icon
-							icon="carbon:user-avatar"
-							style="color: white; margin-left: 17px"
-							width="40"
-						></iconify-icon>
-					</a>
-					{{!-- Link hacia el login --}}
-					<a class="nav-link link-light" href="/login"
-						>Login</a
-					>
-					{{/if}}
-				</li>
+            {{! Si el usuario es admin tiene acceso a crear productos }}
+            {{#if res.locals.userAdmin}}
+              {{! Íconos }}
+              <a href="/creador">
+                <iconify-icon
+                  icon="gridicons:create"
+                  style="color: white; margin-left: 17px"
+                  width="40"
+                ></iconify-icon>
+              </a>
+              {{! Link hacia creador }}
+              <a class="nav-link link-light" href="/creador">Crear</a>
+            {{/if}}
 
-				{{!-- Carrito --}}
-				<li class="nav-item">
-				{{!-- Ícono --}}
-				<a href="/carrito"
-					><iconify-icon
-						icon="bytesize:cart"
-						style="color: white; margin-left: 17px"
-						width="40"
-					></iconify-icon
-				></a>
-				
-				{{!-- Número de productos en el carrito --}}
-				<span class="badge rounded-circle carrito-numero">0</span>
-				
-				{{!-- Link hacía el carrito --}}
-				<a class="nav-link link-light" href="/carrito"
-					>Carrito</a
-				>
-				</li>
-			</ul>
-			{{!-- Fin de los íconos del nav --}}
+            {{! Sino es admin y no está logueado }}
+          {{else}}
+            {{! Ícono }}
+            <a href="/login">
+              <iconify-icon
+                icon="carbon:user-avatar"
+                style="color: white; margin-left: 17px"
+                width="40"
+              ></iconify-icon>
+            </a>
+            {{! Link hacia el login }}
+            <a class="nav-link link-light" href="/login">Login</a>
+          {{/if}}
+        </li>
 
-			{{!-- Este contenedor aparece por debajo del breakpoint md, muestra lo mismo que en la linea --}}
-			<div class="container d-md-none pt-4 mx-0">
-				{{!-- Link para ir al index --}}
-				<a class="link-light" href="/">Inicio</a>
+        {{! Carrito }}
+        <li class="nav-item">
+          {{! Ícono }}
+          <a href="/carrito"><iconify-icon
+              icon="bytesize:cart"
+              style="color: white; margin-left: 17px"
+              width="40"
+            ></iconify-icon></a>
 
-				{{!-- Dropdown link que lleva a productos --}}
-				<div class="dropdown my-3">
-					<a
-						class="nav-link link-light dropdown-toggle"
-						data-bs-toggle="dropdown"
-						href="#"
-						role="button"
-						aria-expanded="false"
-					>Productos</a>
-					<ul class="dropdown-menu">
-						{{#each res.locals.producto}}
-						<li>
-							<a class="dropdown-item" href="/productos"
-								>{{nombre}}</a
-							>
-						</li>
-						{{/each}}
-					</ul>
-				</div>
+          {{! Número de productos en el carrito }}
+          <span class="badge rounded-circle carrito-numero">0</span>
 
-				{{!-- Link a contactos --}}
-				<a class="link-light" href="#">Contacto</a>
-			</div>
-			{{!-- Fin del contenedor --}}
-		</div>
-	</div>
+          {{! Link hacía el carrito }}
+          <a class="nav-link link-light" href="/carrito">Carrito</a>
+        </li>
+      </ul>
+      {{! Fin de los íconos del nav }}
+
+      {{! Este contenedor aparece por debajo del breakpoint md, muestra lo mismo que en la linea }}
+      <div class="container d-md-none pt-4 mx-0">
+        {{! Link para ir al index }}
+        <a class="link-light" href="/">Inicio</a>
+
+        {{! Dropdown link que lleva a productos }}
+        <div class="dropdown my-3">
+          <a
+            class="nav-link link-light dropdown-toggle"
+            data-bs-toggle="dropdown"
+            href="#"
+            role="button"
+            aria-expanded="false"
+          >Productos</a>
+          <ul class="dropdown-menu">
+            {{#each res.locals.producto}}
+              <li>
+                <a class="dropdown-item" href="/productos">{{nombre}}</a>
+              </li>
+            {{/each}}
+          </ul>
+        </div>
+
+      </div>
+      {{! Fin del contenedor }}
+    </div>
+  </div>
 </nav>
 
-{{!-- Línea de navegacion --}}
+{{! Línea de navegacion }}
 <div class="linea">
-	<div class="container d-none d-md-flex justify-content-center">
-		<a class="link-light" href="/">Inicio</a>
-		<div class="dropdown">
-			<a
-				class="nav-link dropdown-toggle"
-				data-bs-toggle="dropdown"
-				href="#"
-				role="button"
-				aria-expanded="false"
-				>Productos</a
-			>
-			<ul class="dropdown-menu">
-				{{#res.locals.producto}}
-					<li>
-						<a class="dropdown-item" href="/productos">{{nombre}}</a>
-					</li>
-				{{/res.locals.producto}}
-			</ul>
-		</div>
-		<a>Contacto</a>
-	</div>
+  <div class="container d-none d-md-flex justify-content-center">
+    <a class="link-light" href="/">Inicio</a>
+    <div class="dropdown">
+      <a
+        class="nav-link dropdown-toggle"
+        data-bs-toggle="dropdown"
+        href="/productos"
+        role="button"
+        aria-expanded="false"
+      >Productos</a>
+      <ul class="dropdown-menu">
+        <li>
+          <a href="/categoria/Chocolate" class="dropdown-item">Chocolate</a>
+        </li>
+        <li>
+          <a href="/categoria/Gomitas" class="dropdown-item">Gomitas</a>
+        </li>
+        <li>
+          <a href="/categoria/Bombones" class="dropdown-item">Bombones</a>
+        </li>
+        <li>
+          <a href="/categoria/Caramelos" class="dropdown-item">Caramelos</a>
+        </li>
+        <li>
+          <a href="/categoria/Pastillitas" class="dropdown-item">Pastillitas</a>
+        </li>
+        <li>
+          <a href="/categoria/Malvadiscos" class="dropdown-item">Malvadiscos</a>
+        </li>
+        <li>
+          <a href="/productos" class="dropdown-item">Todas las categorias</a>
+        </li>
+      </ul>
+    </div>
+    <a class="link-light" href="#contacto">Contacto</a>
+  </div>
 </div>

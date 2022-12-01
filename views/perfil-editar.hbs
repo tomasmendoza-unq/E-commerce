@@ -11,20 +11,20 @@
 <div class="cuenta container p-5">
   <h1 class="text-center text-decoration-underline">Mi perfil</h1>
   {{!-- Formulario para editar datos personales --}}
-  <form class="editar-perfil">
+  <form method="post" action="/editar" class="editar-perfil">
     <div class="row mt-5">
-
+      {{#Usuarios}}
       {{!-- Campo para cambiar el nombre --}}
       <div class="col-12 col-lg-6">
         <div class="mb-3">
           <label
-            for="exampleFormControlInput1"
             class="form-label fw-bold"
           >Nombre</label>
           <input
-            type="email"
+            type="text"
             class="form-control"
-            id="exampleFormControlInput1"
+            name="nombre"
+            value="{{nombre}}"
           />
         </div>
       </div>
@@ -34,13 +34,13 @@
       <div class="col-12 col-lg-6">
         <div class="mb-3">
           <label
-            for="exampleFormControlInput1"
             class="form-label fw-bold"
           >Apellido</label>
           <input
-            type="email"
+            type="text"
             class="form-control"
-            id="exampleFormControlInput1"
+            name="apellido"
+            value="{{apellido}}"
           />
         </div>
       </div>
@@ -51,36 +51,47 @@
     <div class="mb-3">
       <label for="exampleFormControlInput1" class="form-label fw-bold">Correo
         electronico</label>
-      <input type="email" class="form-control" id="exampleFormControlInput1" />
+      <input type="email" value="{{email}}" class="form-control" name="correo" />
     </div>
     {{!-- Fin del campo para cambiar el correo electrónico --}}
     
     {{!-- Campo para cambiar teléfono celular--}}
     <div class="mb-3">
-      <label for="exampleFormControlInput1" class="form-label fw-bold">Teléfono (Opcional)</label>
-      <input type="email" class="form-control" id="exampleFormControlInput1" />
+      <label class="form-label fw-bold">Teléfono (Opcional)</label>
+      <input type="text" value="{{telefono}}" class="form-control" name="telefono" />
     </div>
     {{!-- Fin del campo para cambiar el teléfono celular --}}
 
     {{!-- Formularios para contraseñas --}}
-    <h2 class="fs-5 text-decoration-underline my-5">Cambio de contraseña (Dejar en blanco para no cambiar nada)</h2>
+    <h2 class="fs-5 text-decoration-underline my-5">Cambio de contraseña (Repita la contraseña si no la va a cambiar)</h2>
     <div class="mb-3">
-      <label for="inputPassword" class="form-label fw-bold">Contraseñaa actual</label>
-      <input type="password" class="form-control" id="inputPassword">
+      <label class="form-label fw-bold">Contraseña actual</label>
+      <input type="password" class="form-control" name="contra" required>
     </div>
     <div class="mb-3">
-      <label for="inputPassword" class="form-label fw-bold">Nueva contraseña</label>
-      <input type="password" class="form-control" id="inputPassword">
+      <label class="form-label fw-bold">Nueva contraseña</label>
+      <input type="password" class="form-control" name="contrasena" required>
     </div>
     <div class="mb-3">
-      <label for="inputPassword" class="form-label fw-bold">Confirmar nueva contraseña</label>
-      <input type="password" class="form-control" id="inputPassword">
+      <label class="form-label fw-bold">Confirmar nueva contraseña</label>
+      <input type="password" class="form-control" required>
     </div>
     {{!-- Fin del formulario para contraseñas --}}
-
+    {{/Usuarios}}
     {{!-- Botón para enviar datos --}}
     <button type="submit" class="btn btn-primary mb-3">Guardar cambios</button>
   </form>
+  {{# if log}}
+  <div class="alert alert-success" role="alert">
+    Se modificaron los datos con exito
+  </div>
+
+  {{/if}}
+  {{# if logge}}
+  <div class="alert alert-warning" role="alert">
+    No ingreso bien la contraseña
+  </div>
+  {{/if}}
   {{!-- Fin del formulario para editar datos personales --}}
 </div>
 {{> footer}}

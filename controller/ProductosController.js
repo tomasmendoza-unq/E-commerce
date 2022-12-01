@@ -6,6 +6,8 @@ const { productos } = require("../models/Productos");
 async function getAll(req, res) {
   let producto = await productos.findAll({ offset: 0, limit: 9 });
 
+  console.log(res.locals.userAdmin);
+
   res.render("productos", { producto, res });
 }
 

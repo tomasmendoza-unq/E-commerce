@@ -14,9 +14,24 @@ async function compra(req, res) {
     limit: 4,
   });
 
-  res.render("compra", { product, res, relacionado });
+  res.render("compra", { product, res, relacionado, req });
+}
+
+async function borrar(req, res, next) {
+  if (res.locals.userAdmin) {
+    await productos.destroy({
+      where: {
+        id_producto: req.params.id,
+      },
+    });
+
+    next();
+  } else {
+    next();
+  }
 }
 
 module.exports = {
   compra: compra,
+  borrar: borrar,
 };

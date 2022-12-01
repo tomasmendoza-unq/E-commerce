@@ -104,7 +104,34 @@
           </div>
         </div>
         {{!-- Fin de campos para email y contraseña --}}
-      
+
+        {{!-- campo para telelono --}}
+        <div class="col-12">
+          <div class="input-group mb-3">
+            {{!-- Ícono --}}
+            <span
+              class="input-group-text"
+              id="basic-addon1"
+              style="background-color: #ff98a9"
+            >
+            <iconify-icon 
+            icon="bi:telephone"
+            ></iconify-icon>
+            </span>
+            
+            {{!-- Campo para ingresar numero de telefono--}}
+            <input
+              type="text"
+              name="telefono"
+              class="form-control"
+              placeholder="Telefono"
+              aria-label="Password"
+              aria-describedby="basic-addon1"
+            />
+          </div>
+        </div>
+        {{!-- Fin de campo para telefono --}}
+
       </div>
 
       {{!-- Botón para registrarse --}}

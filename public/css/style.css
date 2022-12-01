@@ -117,10 +117,10 @@ button:hover {
   width: 11rem;
 }
 
-.compra h1, 
+.compra h1,
 .compra h2,
 .compra .price {
-  color: #D68080;
+  color: #d68080;
 }
 
 .form-check {
@@ -149,19 +149,18 @@ button:hover {
   font-weight: 500;
 }
 
-.compra .cantidad .aumentar{
+.compra .cantidad .aumentar {
   width: 92px;
   background: #de9898;
   border-radius: 6px;
 }
 
-.compra .cantidad .aumentar button{
+.compra .cantidad .aumentar button {
   background: #de9898;
   border-radius: 6px;
 }
 
-.compra .cantidad .aumentar input,
-.carrito .cantidad .aumentar input {
+.compra .cantidad .aumentar input {
   width: 16px;
   background: #de9898;
   border-radius: 6px;
@@ -170,10 +169,12 @@ button:hover {
 }
 
 .carrito .cantidad .aumentar input {
-  width: 10px;
+  width: 16px;
+  background: transparent;
   border-radius: 6px;
   border: none;
-  color: white;
+  color: rgb(0, 0, 0);
+  color: #d68080;
 }
 
 .boton {
@@ -199,7 +200,6 @@ button:hover {
   margin: 200px 0px 0px 0px;
 }
 
-
 /* Seccion de compra - Productos relacionados */
 
 .producto img {
@@ -213,7 +213,7 @@ button:hover {
 
 .producto .card {
   width: 16rem;
-  background-color: #F27474;
+  background-color: #f27474;
 }
 
 /* Mi carrito -------------*/
@@ -294,7 +294,6 @@ section .container:not(form .container) {
   margin-bottom: 50px;
 }
 
-
 .btn {
   background-color: #ff98a9;
   border: #ff98a9;
@@ -332,7 +331,7 @@ section .register form img {
 
 /* Reglas para ayuda */
 .ayuda {
-  color: #DE9898;
+  color: #de9898;
 }
 
 .ayuda-form {
@@ -347,28 +346,29 @@ section .register form img {
 .ayuda .como-comprar,
 .ayuda .medios-pago {
   width: 500px;
-  color: #7D6B6B;
+  color: #7d6b6b;
 }
 
 .ayuda .como-comprar h2,
 .ayuda .medios-pago h2 {
-  border-bottom: #BD8989 3px solid;
-  color: #F27474;
+  border-bottom: #bd8989 3px solid;
+  color: #f27474;
 }
 
 .ayuda .como-comprar .opciones:nth-of-type(2) {
-  border-right: #BD8989 2px solid;
-  border-left: #BD8989 2px solid;
+  border-right: #bd8989 2px solid;
+  border-left: #bd8989 2px solid;
   padding-right: 8px;
   padding-left: 8px;
   margin-right: 8px;
   margin-left: 8px;
-
 }
 
 /* Perfil */
 
-.cuenta { margin-bottom: 20%; }
+.cuenta {
+  margin-bottom: 20%;
+}
 
 .cuenta h1,
 .cuenta h2 {
@@ -440,7 +440,7 @@ section .register form img {
     margin-top: 20px;
     width: 100%;
   }
-  
+
   .carousel {
     max-width: 650px;
   }
@@ -474,7 +474,6 @@ section .register form img {
   .ayuda-form {
     width: 400px;
   }
-
 }
 
 @media (max-width: 767px) {
@@ -485,7 +484,7 @@ section .register form img {
   .carousel-item img {
     height: 22rem;
   }
-  
+
   section .register:not(form .register) {
     width: 350px;
     padding: 0;
@@ -494,7 +493,6 @@ section .register form img {
 }
 
 @media (max-width: 425px) {
-
   .carousel {
     width: 350px;
   }
@@ -531,15 +529,15 @@ section .register form img {
   .check {
     margin-left: 30px;
   }
-  
+
   .container .descripcion p {
     width: 200px;
   }
-  
+
   .pedido {
     width: 300px;
   }
-  
+
   .ayuda-form {
     width: 350px;
   }
@@ -556,7 +554,7 @@ section .register form img {
   }
   .titulo {
     font-size: 20px;
-  } 
+  }
 
   section .container:not(form .container) {
     width: 280px;
@@ -586,11 +584,11 @@ section .register form img {
   .producto .card {
     width: 10rem;
   }
-  
+
   .pedido {
     width: 250px;
   }
-  
+
   .ayuda-form {
     width: 250px;
   }
@@ -601,6 +599,24 @@ section .register form img {
   }
 }
 
+/* Creador de productos */
+
+.creador .titulo-creador {
+  color: #eb6767;
+}
+
+.creador .form-control {
+  border-color: pink;
+}
+
+.creador .subir-producto {
+  background-color: #eb6767;
+  color: #fff;
+}
+
+.creador .subir-producto:hover {
+  background-color: #d35b5b;
+}
 
 /* Estilos del dropdown(desplegables) */
 
@@ -620,6 +636,6 @@ section .register form img {
   }
 }
 
-.carrito-numero{
+.carrito-numero {
   background-color: red;
 }

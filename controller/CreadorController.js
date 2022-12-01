@@ -42,7 +42,7 @@ var upload = multer({
   },
 }).single("avatar");
 
-async function create(req, res, file) {
+async function create(req, res, next) {
   const datos = req.body;
 
   const product = await productos.create({
@@ -53,7 +53,7 @@ async function create(req, res, file) {
     categoria: datos.categoria,
     destacado: datos.destacado ? true : false,
   });
-  res.render(`index`, { res });
+  next();
 }
 
 module.exports = {

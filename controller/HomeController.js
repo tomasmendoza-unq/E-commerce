@@ -10,8 +10,6 @@ async function Home(req, res) {
     where: { destacado: true },
   });
 
-  console.log(producto);
-
   res.render("index", { res, producto });
 }
 

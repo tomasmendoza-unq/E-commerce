@@ -23,15 +23,15 @@ async function logeo(req, res, next) {
 
     req.session.user = user.id_usuario;
 
-    res.render("index", { res });
+    next();
   }
 }
 
-function logout(req, res) {
+function logout(req, res, next) {
   req.session.destroy();
   res.locals.userFound = false;
 
-  res.render("index", { res });
+  next();
 }
 
 module.exports = {

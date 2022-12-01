@@ -1,35 +1,34 @@
-function setcarritoVacio(){
+function setcarritoVacio() {
   tbody.innerHTML = `
           <div class="alert alert-warning my-2 text-center">No tienes productos en el carrito</div>        
   `;
 }
 
-function vaciarCarrito(){
+function vaciarCarrito() {
   localStorage.removeItem("carrito");
 }
 
-function calcularTotal(products){
+function calcularTotal(products) {
   return products.reduce(
-      (acum,products) => (acum += products.precio * products.cantidad),
-      0
+    (acum, products) => (acum += products.precio * products.cantidad),
+    0
   );
 }
 
 let cartRows = document.querySelector(".cart");
 let tbody = document.querySelector(".tbody");
 
-
 let productos = [];
 
-if(localStorage.carrito){
-  let carrito = JSON.parse(localStorage.carrito)
-  
-  carrito.forEach((item,index)=> {
-      fetch(`/product/${item.id}`)
-          .then((res) => res.json())
-          .then((product)=>{
-              if(product){
-                  cartRows.innerHTML += `        
+if (localStorage.carrito) {
+  let carrito = JSON.parse(localStorage.carrito);
+
+  carrito.forEach((item, index) => {
+    fetch(`/product/${item.id}`)
+      .then((res) => res.json())
+      .then((product) => {
+        if (product) {
+          cartRows.innerHTML += `        
                   <div class="d-block d-md-flex mt-5">
                     <img
                       class="imagen-carrito m-2"
@@ -48,15 +47,16 @@ if(localStorage.carrito){
                       <div
                         class="cantidad valor col-lg-1 col-md-4 col-3 order-lg-2 order-3 mx-5"
                       >
-                        <p>Cantidad</p>
-                        <div class="aumentar d-flex content-justify-center">
-                          <input type="text" value="${item.cantidad}" />
+                        <p class="ms-3" >Cantidad</p>
+                        <center>
+                        <div class="aumentar d-flex content-justify-center ms-5">
+                          <input type="text" value="${item.cantidad}" disabled/>
                         </div>
+                        </center>
                       </div>
                       <div
                         class="precio col-lg-1 col-md-4 col-3 order-lg-3 order-4 mt-5 mx-4 fs-md-2 fs-4"
                       >
-                      
                         $${parseFloat(
                           product.precio * item.cantidad,
                           2
@@ -64,61 +64,63 @@ if(localStorage.carrito){
                       </div>
                     </div>
                   </div>`;
-              productos.push({
-                  productId: item.id,
-                  nombre: product.nombre,
-                  precio: product.precio,
-                  cantidad: item.cantidad
-              })
-              } else {
-                  //si no esta el producto lo borra del local storage
-                  carrito.splice(index,1);
-                  localStorage.setItem('carrito')
-              }
-          })
-          .then(() => {
-              document.querySelector(".total").innerText = `$ ${calcularTotal(productos)}`;
+          productos.push({
+            productId: item.id,
+            nombre: product.nombre,
+            precio: product.precio,
+            cantidad: item.cantidad,
           });
+        } else {
+          //si no esta el producto lo borra del local storage
+          carrito.splice(index, 1);
+          localStorage.setItem("carrito");
+        }
+      })
+      .then(() => {
+        document.querySelector(".total").innerText = `$ ${calcularTotal(
+          productos
+        )}`;
+      });
   });
 } else {
-setcarritoVacio()
+  setcarritoVacio();
 }
 
-//compra 
+//compra
 
-let checkoutCart = document.querySelector('#cheackoutCart')
-if (localStorage.carrito){
-checkoutCart.onsubmit = (e) => {
-  e.preventDefault();
-  const formData = {
-    ordenItems: productos,
-    metodoDePago: checkoutCart.paymentMethod.value,
-    puntoDeEncuentro: checkoutCart.punto.value,
-    total: calcularTotal(productos)
-  };
-  console.log(JSON.stringify(formData))
-  fetch("/checkout",{
-    method : "POST",
-    body: JSON.stringify(formData),
-    headers: {
-      "Content-Type": "application/json"
-    }
-  })
-    .then((r) => r.json())
-    .then((res) => {
-      if(res.ok){
-        vaciarCarrito()
-        toastr["success"]('Su orden fue recibida ')
-      }
+let checkoutCart = document.querySelector("#cheackoutCart");
+if (localStorage.carrito) {
+  checkoutCart.onsubmit = (e) => {
+    e.preventDefault();
+    const formData = {
+      ordenItems: productos,
+      metodoDePago: checkoutCart.paymentMethod.value,
+      puntoDeEncuentro: checkoutCart.punto.value,
+      total: calcularTotal(productos),
+    };
+    console.log(JSON.stringify(formData));
+    fetch("/checkout", {
+      method: "POST",
+      body: JSON.stringify(formData),
+      headers: {
+        "Content-Type": "application/json",
+      },
     })
-}
+      .then((r) => r.json())
+      .then((res) => {
+        if (res.ok) {
+          vaciarCarrito();
+          toastr["success"]("Su orden fue recibida ");
+        }
+      });
+  };
 }
 
-let vaciar = document.querySelector(".vaciar")
+let vaciar = document.querySelector(".vaciar");
 
-if (localStorage.carrito){
+if (localStorage.carrito) {
   vaciar.addEventListener("click", () => {
-    vaciarCarrito()
-    window.location.reload()
-  })
+    vaciarCarrito();
+    window.location.reload();
+  });
 }

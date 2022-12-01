@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 19-11-2022 a las 17:33:53
+-- Tiempo de generación: 25-11-2022 a las 23:34:42
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 8.0.18
 
@@ -33,20 +33,10 @@ CREATE TABLE `ordenes` (
   `total` int(250) NOT NULL,
   `metodoDePago` varchar(250) NOT NULL,
   `puntoDeEncuentro` varchar(250) NOT NULL,
+  `estado` varchar(50) NOT NULL,
   `createdAt` datetime NOT NULL,
   `updatedAt` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Volcado de datos para la tabla `ordenes`
---
-
-INSERT INTO `ordenes` (`id_orden`, `id_usuario`, `total`, `metodoDePago`, `puntoDeEncuentro`, `createdAt`, `updatedAt`) VALUES
-(1, 5, 3001, 'Efectivo', 'DHL', '2022-10-29 00:07:07', '2022-10-29 00:07:07'),
-(2, 9, 3001, 'Efectivo', 'Cadete', '2022-11-16 15:12:08', '2022-11-16 15:12:08'),
-(3, 1, 748738, 'Débito', 'Cadete', '2022-11-19 15:23:12', '2022-11-19 15:23:12'),
-(4, 1, 16232, 'Efectivo', 'Cadete', '2022-11-19 15:54:12', '2022-11-19 15:54:12'),
-(5, 1, 131160, 'Débito', 'Correo', '2022-11-19 16:32:02', '2022-11-19 16:32:02');
 
 -- --------------------------------------------------------
 
@@ -64,28 +54,6 @@ CREATE TABLE `ordenesitems` (
   `createdAt` date NOT NULL,
   `updatedAt` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Volcado de datos para la tabla `ordenesitems`
---
-
-INSERT INTO `ordenesitems` (`id`, `id_orden`, `id_productos`, `nombre`, `precio`, `cantidad`, `createdAt`, `updatedAt`) VALUES
-(1, 1, 1, 'bandeja de dientes ', 3000, 2, '2022-10-29', '2022-10-29'),
-(2, 2, 1, 'bandeja de dientes ', 3000, 2, '2022-11-16', '2022-11-16'),
-(3, 3, 1, 'bandeja de dientes ', 3000, 2, '2022-11-19', '2022-11-19'),
-(4, 3, 7, 'prueba', 1000, 1, '2022-11-19', '2022-11-19'),
-(5, 3, 2, 'bandeja de dientes ', 1000, 3, '2022-11-19', '2022-11-19'),
-(6, 3, 27, '23123', 123123, 6, '2022-11-19', '2022-11-19'),
-(7, 4, 5, 'prueba', 1000, 8, '2022-11-19', '2022-11-19'),
-(8, 4, 31, 'fwef', 232, 1, '2022-11-19', '2022-11-19'),
-(9, 4, 1, 'bandeja de dientes ', 3000, 2, '2022-11-19', '2022-11-19'),
-(10, 4, 28, 'w', 2000, 1, '2022-11-19', '2022-11-19'),
-(11, 5, 9, 'prueba', 1000, 28, '2022-11-19', '2022-11-19'),
-(12, 5, 5, 'prueba', 1000, 15, '2022-11-19', '2022-11-19'),
-(13, 5, 1, 'bandeja de dientes ', 3000, 19, '2022-11-19', '2022-11-19'),
-(14, 5, 2, 'bandeja de dientes ', 1000, 28, '2022-11-19', '2022-11-19'),
-(15, 5, 6, 'prueba', 1000, 2, '2022-11-19', '2022-11-19'),
-(16, 5, 31, 'fwef', 232, 5, '2022-11-19', '2022-11-19');
 
 -- --------------------------------------------------------
 
@@ -110,37 +78,12 @@ CREATE TABLE `productos` (
 --
 
 INSERT INTO `productos` (`id_producto`, `nombre`, `imagen`, `precio`, `detalles`, `categoria`, `destacado`, `createdAt`, `updatedAt`) VALUES
-(1, 'bandeja de dientes ', 'img/productos/MÃ¡rcia-Moura-Kiwi-II.jpg', 3000, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In a eros massa. In ultricies lacus ac justo fermentum, tempor volutpat purus blandit. Curabitur sed sem id nisi luctus elementum. Sed facilisis nulla quis interdum aliquam. Sed id turpis ac ri', 'Chocolate', 1, '2022-11-19 14:36:13', '2022-10-28 20:52:41'),
-(2, 'bandeja de dientes ', 'img/productos/deep-space-4k-wallpaper-preview.jpg', 1000, 'tomas21tomas21tomas21tomas21tomas21tomas21tomas21tomas21tomas21tomas21tomas21tomas21tomas21tomas21tomas21tomas21tomas21tomas21tomas21tomas21tomas21tomas21tomas21tomas21tomas21tomas21tomas21tomas21tomas21tomas21tomas21tomas21tomas21', 'Caramelos', 0, '2022-11-14 00:14:16', '2022-11-14 00:14:16'),
-(3, 'prueba', 'img/productos/44.jpg', 1000, 'lorem', 'gomita', 0, '2022-11-19 00:49:03', '0000-00-00 00:00:00'),
-(4, 'prueba', 'img/productos/44.jpg', 1000, 'lorem', 'gomita', 1, '2022-11-19 14:36:06', '0000-00-00 00:00:00'),
-(5, 'prueba', 'img/productos/44.jpg', 1000, 'lorem', 'gomita', 0, '2022-11-19 00:49:25', '0000-00-00 00:00:00'),
-(6, 'prueba', 'img/productos/44.jpg', 1000, 'lorem', 'gomita', 0, '2022-11-19 00:49:32', '0000-00-00 00:00:00'),
-(7, 'prueba', 'img/productos/44.jpg', 1000, 'lorem', 'gomita', 0, '2022-11-19 00:49:39', '0000-00-00 00:00:00'),
-(8, 'prueba', 'img/productos/44.jpg', 1000, 'lorem', 'gomita', 0, '2022-11-19 00:49:46', '0000-00-00 00:00:00'),
-(9, 'prueba', 'img/productos/44.jpg', 1000, 'lorem', 'gomita', 0, '2022-11-19 00:49:54', '0000-00-00 00:00:00'),
-(10, 'prueba', 'img/productos/44.jpg', 1000, 'lorem', 'gomita', 0, '2022-11-19 00:50:00', '0000-00-00 00:00:00'),
-(11, 'prueba', 'img/productos/44.jpg', 1000, 'lorem', 'gomita', 0, '2022-11-19 00:50:07', '0000-00-00 00:00:00'),
-(12, 'prueba', 'img/productos/44.jpg', 1000, 'lorem', 'gomita', 0, '2022-11-19 00:50:21', '0000-00-00 00:00:00'),
-(13, 'prueba', 'img/productos/44.jpg', 1000, 'lorem', 'gomita', 0, '2022-11-19 00:50:22', '0000-00-00 00:00:00'),
-(14, 'prueba', 'img/productos/44.jpg', 1000, 'lorem', 'gomita', 0, '2022-11-19 00:50:22', '0000-00-00 00:00:00'),
-(15, 'prueba', 'img/productos/44.jpg', 1000, 'lorem', 'gomita', 0, '2022-11-19 00:50:23', '0000-00-00 00:00:00'),
-(16, 'prueba', 'img/productos/44.jpg', 1000, 'lorem', 'gomita', 0, '2022-11-19 00:50:23', '0000-00-00 00:00:00'),
-(17, 'prueba', 'img/productos/44.jpg', 1000, 'lorem', 'gomita', 0, '2022-11-19 00:50:23', '0000-00-00 00:00:00'),
-(18, 'prueba', 'img/productos/44.jpg', 1000, 'lorem', 'gomita', 0, '2022-11-19 00:50:23', '0000-00-00 00:00:00'),
-(19, 'prueba', 'img/productos/44.jpg', 1000, 'lorem', 'gomita', 0, '2022-11-19 00:50:23', '0000-00-00 00:00:00'),
-(20, 'prueba', 'img/productos/44.jpg', 1000, 'lorem', 'gomita', 0, '2022-11-19 00:50:23', '0000-00-00 00:00:00'),
-(21, 'prueba', 'img/productos/44.jpg', 1000, 'lorem', 'gomita', 0, '2022-11-19 00:50:29', '0000-00-00 00:00:00'),
-(22, 'prueba', 'img/productos/44.jpg', 1000, 'lorem', 'gomita', 0, '2022-11-19 00:50:29', '0000-00-00 00:00:00'),
-(23, 'prueba', 'img/productos/44.jpg', 1000, 'lorem', 'gomita', 0, '2022-11-19 00:50:29', '0000-00-00 00:00:00'),
-(24, 'prueba', 'img/productos/44.jpg', 1000, 'lorem', 'gomita', 0, '2022-11-19 00:50:29', '0000-00-00 00:00:00'),
-(25, 'prueba', 'img/productos/44.jpg', 1000, 'lorem', 'gomita', 0, '2022-11-19 00:50:29', '0000-00-00 00:00:00'),
-(26, 'bondiola', 'img/productos/Captura de pantalla (2893).png', 2000, '2021203k12oem2kmofm 32kg fk3 gmfk gk 4kg', 'Bombones', 0, '2022-11-19 02:26:16', '2022-11-19 02:26:16'),
-(27, '23123', 'img/productos/Captura de pantalla (2892).png', 123123, 'tmaolfrmaemfeomflemfomwflmwoefmewomfwef', 'Gomitas', 1, '2022-11-19 02:47:25', '2022-11-19 02:47:25'),
-(28, 'w', 'img/productos/Captura de pantalla (2893).png', 2000, 'tinyint(1)tinyint(1)tinyint(1)tinyint(1)tinyint(1)tinyint(1)tinyint(1)tinyint(1)', 'Chocolate', 1, '2022-11-19 03:01:54', '2022-11-19 03:01:54'),
-(29, 'lasm', 'img/productos/Captura de pantalla (2883).png', 123, '123123123123123132123123123123123', 'Pastillas', 0, '2022-11-19 03:03:25', '2022-11-19 03:03:25'),
-(30, 'okoe', 'img/productos/Captura de pantalla (2892).png', 2000, '21                <select class=\"form-select d-block w-100\" name=\"categoria\"\r\n                    required=\"\">\r\n                    <option value=\"\">Elegir...</option>\r\n                    <option value=\"Chocolate\">Chocolate</option>\r\n               ', 'Pastillas', 1, '2022-11-19 03:07:29', '2022-11-19 03:07:29'),
-(31, 'fwef', 'img/productos/Captura de pantalla (2888).png', 232, '21321213                <select class=\"form-select d-block w-100\" name=\"categoria\"\r\n                    required=\"\">\r\n                    <option value=\"\">Elegir...</option>\r\n                    <option value=\"Chocolate\">Chocolate</option>\r\n         ', 'Caramelos', 1, '2022-11-19 03:09:11', '2022-11-19 03:09:11');
+(1, 'Chocolate de prueba', 'img/productos/44.jpg', 1000, 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It h', 'Chocolate', 1, '2022-11-25 22:02:18', '2022-11-25 22:02:18'),
+(2, 'Gominolas', 'img/productos/999.jpg', 1000, 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It h', 'Gomitas', 1, '2022-11-25 22:02:57', '2022-11-25 22:02:57'),
+(3, 'Bombones test', 'img/productos/20171027_182505.jpg', 2000, 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It h', 'Bombones', 1, '2022-11-25 22:03:34', '2022-11-25 22:03:34'),
+(4, 'Caramelos', 'img/productos/274282204_4814242625340480_127006461799274787_n.jpg', 3000, 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It h', 'Caramelos', 1, '2022-11-25 22:04:04', '2022-11-25 22:04:04'),
+(5, 'Pastillas test', 'img/productos/17abf436-32b2-4ce8-9970-3cade98e06e9.jpg', 2000, 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It h', 'Pastillitas', 1, '2022-11-25 22:04:38', '2022-11-25 22:04:38'),
+(6, 'Malvadiscos', 'img/productos/b68e77d8-5d3b-4197-a8a1-5d66407b86f0.jpg', 3000, 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It h', 'Malvadiscos', 1, '2022-11-25 22:05:23', '2022-11-25 22:05:23');
 
 -- --------------------------------------------------------
 
@@ -153,6 +96,7 @@ CREATE TABLE `usuarios` (
   `nombre` varchar(250) NOT NULL,
   `apellido` varchar(2500) NOT NULL,
   `email` varchar(250) NOT NULL,
+  `telefono` varchar(50) NOT NULL,
   `contraseña` varchar(300) NOT NULL,
   `createdAT` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `updatedAt` datetime NOT NULL
@@ -162,9 +106,9 @@ CREATE TABLE `usuarios` (
 -- Volcado de datos para la tabla `usuarios`
 --
 
-INSERT INTO `usuarios` (`id_usuario`, `nombre`, `apellido`, `email`, `contraseña`, `createdAT`, `updatedAt`) VALUES
-(1, 'tomas', 'mendoza', 'mendoza.tomas@gmail.com', '1', '2022-11-19 02:18:09', '2022-11-19 02:18:09'),
-(2, 'Toma', '123', 'tm1453766@gmail.com', '123', '2022-11-19 02:29:14', '2022-11-19 02:29:14');
+INSERT INTO `usuarios` (`id_usuario`, `nombre`, `apellido`, `email`, `telefono`, `contraseña`, `createdAT`, `updatedAt`) VALUES
+(1, 'test', 'test', 'admin@gmail.com', '+541162707458', '123', '2022-11-25 22:12:30', '2022-11-25 22:12:30'),
+(2, 'test2', 'test2', 'usuario@gmail.com', '+541162707458', '1', '2022-11-25 22:12:52', '2022-11-25 22:12:52');
 
 --
 -- Índices para tablas volcadas
@@ -202,19 +146,19 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `ordenes`
 --
 ALTER TABLE `ordenes`
-  MODIFY `id_orden` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_orden` int(100) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `ordenesitems`
 --
 ALTER TABLE `ordenesitems`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `productos`
 --
 ALTER TABLE `productos`
-  MODIFY `id_producto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `id_producto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`

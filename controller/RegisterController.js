@@ -19,6 +19,7 @@ async function registrado(req, res) {
     apellido: datos.apellido,
     contraseña: datos.contraseña,
     email: datos.email,
+    telefono: datos.telefono,
   });
   let logg = true;
 

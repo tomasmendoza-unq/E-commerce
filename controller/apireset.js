@@ -16,6 +16,7 @@ module.exports = {
     let orden = await ordenes.create({
       ...req.body,
       id_usuario: req.session.user,
+      estado: "En proceso",
     });
     for (let index = 0; index < data.length; index++) {
       let ordenitem = await ordenesitems.create({
@@ -28,5 +29,11 @@ module.exports = {
     }
 
     res.json({ ok: true, status: 200, order: orden });
+  },
+  ordenItems: async function (req, res) {
+    let orden = await ordenesitems.findAll({
+      where: { id_orden: req.params.id },
+    });
+    return res.json(orden);
   },
 };

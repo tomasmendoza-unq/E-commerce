@@ -1,3 +1,8 @@
+<script>
+  $(document).on("click", "#detalles", () => {
+    $('#Modal-ejemplo').modal({backdrop: 'static'})
+  })
+</script>
 {{> navbar}}
 <style>
   body {
@@ -20,7 +25,15 @@
         {{#Usuarios}}
           <h3 class="fs-5 pb-4"><b>Usuario</b>: {{nombre}} {{apellido}}</h3>
           <h3 class="fs-5 pb-4"><b>Correo</b>: {{email}}</h3>
-					<a class="link-dark fs-5" href="/logout">Desconectarse</a>
+          <h3>Id de usuario: {{id_usuario}}</h3>
+          <div class="row">
+            <div class="col-5">
+					  <a class="link-dark fs-5" href="/logout">Desconectarse</a>
+            </div>
+            <div class="col-5 text-end">
+              <a class="link-dark fs-5" href="/lista">Lista de usuarios</a>
+            </div>
+          </div>
         {{/Usuarios}}
       </div>
     </div>
@@ -44,24 +57,49 @@
           {{!-- Link hacia productos --}}
           <a href="/productos" class="btn btn-primary my-3">Ir a la tienda</a>
         </div>
-				
 				{{!-- Sección de compras realizadas con un producto --}}
-				<div class="compras-finalizadas p-3">
+        {{#each order}}
+				<div class="compras-finalizadas p-3 mb-3">
 
           {{!-- Nombre de la compra --}}
-					<h3 class="fs-5 text-start">Bandeja gomitas 5 divisiones</h3>
+          <div class="row">
+            <div class="col-7">
+              <h3 class="fs-5 text-start">Orden n°{{id_orden}} id-usuario: {{id_usuario}}</h3>
+            </div>
+            <div class="col-5 text-end">
+            <form action="/delete/{{id_orden}}" method="post">
+              <button type="submit" style="border: none;">
+                <iconify-icon icon="material-symbols:delete-outline-sharp" class="btn btn-success rounded-circle" width="30" style="color: white;width: 50px; height: 50px; PADDING: 10px;"></iconify-icon>
+              </button>    
+            </form>
+            </div>
+          </div>
 					{{!-- Precio de la compra --}}
-          <p class="fs-5 text-start">$1250</p>
+          <p class="fs-5 text-start">${{total}}</p>
 					<div class="d-flex justify-content-between">
-						<span>Finalizado</span>
-            
+						<span>
+              {{estado}}
+              {{# if ../res.locals.userAdmin}}
+              <form action="/estado/{{id_orden}}" method="post">         
+                <select class="form-select d-block w-100 mb-2" name="estado"
+                required="">
+                  <option value="">Elegir categoría...</option>
+                  <option value="Finalizado">Finalizo</option>
+                  <option value="En Proceso">Proceso</option>
+                </select>
+                <button type="submit" class="btn btn-secondary">Enviar</button>
+              </form>
+              {{/if}}
+            </span>
+
             {{!-- Botón modal --}}
-						<a class="link-dark" href="" data-bs-toggle="modal" data-bs-target="#exampleModal">ver detalles</a>
+						<a class="link-dark" id="detalles" data-id="{{id_orden}}" href="" data-bs-toggle="modal" data-bs-target="#Modal-ejemplo">Ver detalles</a>
 					</div>
 				</div>
+        {{/each}}
 
         {{!-- Modal --}}
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="Modal-ejemplo" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog">
             <div class="modal-content">
               {{!-- Header del modal --}}
@@ -70,60 +108,31 @@
               </div>
               {{!-- Contenido principal del modal --}}
               <div class="modal-body text-start">
-                <div class="d-flex align-items-center">
-                  <div class="flex-shrink-0">
-                    <img src="img/productos/44.jpg" width="150" alt="">
-                  </div>
-                  <div class="flex-grow-1 ms-3">
-                    <h2 class="fs-5">Bandeja gomitas 5 divisiones</h2>
-                    <div class="d-flex">
-                      <span class="fw-bold">Cantidad adquirida:</span>
-                      <p class="cantidad-comprada">-5</p>
-                    </div>
-                    <div class="d-flex">
-                      <span class="fw-bold">Precio: accesible por la patrona</span>
-                    </div>
-                  </div>
-                </div>
-                {{!-- Fin del contenido principal del modal --}}
-                <hr>
-                {{!-- Subtotal, costo de envío y total--}}
-                {{!-- Costo subtotal --}}
-                <div class="d-flex justify-content-between">
-                  <h2 class="fs-5">Subtotal: </h2>
-                  <h2 class="fs-5">$3000</h2>
-                </div>
-
-                {{!-- Costo de envío --}}
-                <div class="d-flex justify-content-between">
-                  <h2 class="fs-5">Costo de envío</h2>
-                  <h2 class="fs-5">$3000</h2>
-                </div>
-
-                {{!-- Costo total --}}
-                <div class="d-flex justify-content-between">
-                  <h4 class="fs-4 fw-bold">Total:</h4>
-                  <p class="fs-5 fw-bold">$6000</p>
-                </div>
-                {{!-- Fin del subtotal, costo de envía y total--}}
               
               </div>
               {{!-- Fin del contenido del modal --}}
               
               {{!-- Footer del modal --}}
               <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-secondary" onclick="limpiar()" data-bs-dismiss="modal">Cerrar</button>
               </div>
             </div>
           </div>
         </div>
         {{!-- Fin del modal --}}
 				{{!-- Fin de la sección de compras realizadas con un producto --}}
-      
-			</div>
+
     </div>
 		{{!-- Fin de sección de compras realizadas --}}
 
   </div>
 </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+<script src="scripts/orden-items.js"></script>
+
 {{> footer}}
+

@@ -11,10 +11,16 @@
 {{!-- Sección principal de compra de un producto --}}
 <div class="compra">
   <div class="container">
+    {{#if res.locals.userAdmin}}
+    <a href="/delete/{{req.params.id}}">                  
+      <iconify-icon icon="material-symbols:delete-outline-sharp" class="btn btn-success rounded-circle" width="30" style="color: white;width: 50px; height: 50px; PADDING: 10px;"></iconify-icon>
+    </a>
+    {{/if}}
     {{#product}}
     <h1>{{nombre}}</h1>
 
-    {{!-- AAAAAAComentarias todo esto pofavo Tomy 👉👈 --}}
+
+    {{!-- Muestra el detalle del producto que haya accedido --}}
     <p class="fs-1 price">${{precio}}</p>
     <div class="row">
       <div class="d-lg-block col-lg-8 col-md-12">
@@ -25,6 +31,7 @@
         {{/product}}
         <div class="slider d-lg-block mt-5">
           <div class="row">
+            <h1 class="mb-5">Productos relacionados</h1>
             {{#each relacionado}}
             <div class="col-6 col-sm-3">
               <a href="/compra/{{id_producto}}">
@@ -48,7 +55,7 @@
         <h2 class="text-center px-0">Detalles</h2>
         <div class="row check">
           {{!-- Sección de detalles de la compra --}}
-          <div class="form-check mt-4 col-6 col-lg-12">
+          <div class="form-check mt-4 col-6 col-lg-12 text-break">
             {{detalles}}
           </div>
           {{!-- Sección de detalles de la compra --}}

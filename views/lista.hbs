@@ -1,0 +1,27 @@
+{{> navbar}}
+
+<div class="container mt-5 mb-5">
+<table class="table">
+  <tbody>
+        <tr style="background-color: #fff;">
+            <td>id_usuario</td>
+            <td>Nombre</td>
+            <td>Apellido</td>
+            <td>Email</td>
+            <td>telefono</td>
+        </tr>
+        {{#each Usuarios}}
+        <tr style="background-color: #fff;">
+            <td>{{id_usuario}}</td>
+            <td>{{nombre}}</td>
+            <td>{{apellido}}</td>
+            <td>{{email}}</td>
+            <td>{{telefono}}</td>
+        </tr>
+        {{/each}}
+  </tbody>
+</table>
+</div>
+
+
+{{> footer}}
